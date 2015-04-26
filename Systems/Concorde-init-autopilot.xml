@@ -1,10 +1,14 @@
 <?xml version="1.0"?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <!-- - a few PID depend of Mach.
      - PID depends of captain or copilot instrument (altimeter, IVSI).
      - to compare fast properties.
      - see /sytems/autopilot for the "slow" properties.
 -->
+<<<<<<< HEAD
 
 
 <PropertyList>
@@ -30,4 +34,16 @@
    </sonic>
   </locks>
 
+=======
+<PropertyList>
+  <locks>
+    <autothrottle>
+      <!-- 1 autothrottle per engine -->
+      <engine n="0"/>
+      <engine n="1"/>
+      <engine n="2"/>
+      <engine n="3"/>
+    </autothrottle>
+  </locks>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 </PropertyList>

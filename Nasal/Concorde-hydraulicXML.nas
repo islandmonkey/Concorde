@@ -14,9 +14,15 @@ HydraulicXML.new = func {
 
                HYDSEC : 1.0,
 
+<<<<<<< HEAD
                configpath : nil,
                hydraulicpath : nil,
                iterationspath : nil,
+=======
+               config : nil,
+               hydraulic : nil,
+               iterations : nil,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
                components : HydComponentArray.new(),
                connections : HydConnectionArray.new()
@@ -33,11 +39,19 @@ HydraulicXML.init = func {
    var nb_children = 0;
    var component = nil;
 
+<<<<<<< HEAD
    me.hydraulicpath = props.globals.getNode("/systems/hydraulic");
    me.configpath = me.hydraulicpath.getNode("internal/config");
    me.iterationspath = me.hydraulicpath.getNode("internal/iterations");
 
    children = me.configpath.getChildren("supplier");
+=======
+   me.config = props.globals.getNode("/systems/hydraulic/internal/config");
+   me.hydraulic = props.globals.getNode("/systems/hydraulic");
+   me.iterations = props.globals.getNode("/systems/hydraulic/internal/iterations");
+
+   children = me.config.getChildren("supplier");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_supplier( children[i], me.HYDSEC );
@@ -45,7 +59,11 @@ HydraulicXML.init = func {
         component.fill();
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("circuit");
+=======
+   children = me.config.getChildren("circuit");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_circuit( children[i], me.HYDSEC );
@@ -53,10 +71,17 @@ HydraulicXML.init = func {
         component.fill();
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("connection");
    nb_children = size( children );
    for( i = 0; i < nb_children; i = i+1 ) {
         me.connections.add( children[i], me.components );
+=======
+   children = me.config.getChildren("connection");
+   nb_children = size( children );
+   for( i = 0; i < nb_children; i = i+1 ) {
+        me.connections.add( children[i] );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 
@@ -77,7 +102,11 @@ HydraulicXML.schedule = func {
         component.pressurize();
    }
 
+<<<<<<< HEAD
    if( me.hydraulicpath.getChild("serviceable").getValue() ) {
+=======
+   if( me.hydraulic.getChild("serviceable").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         iter = 0;
         remain = constant.TRUE;
         while( remain ) {
@@ -91,7 +120,11 @@ HydraulicXML.schedule = func {
             iter = iter + 1;
        }
 
+<<<<<<< HEAD
        me.iterationspath.setValue(iter);
+=======
+       me.iterations.setValue(iter);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 
    # failure : no pressure
@@ -108,6 +141,7 @@ HydraulicXML.schedule = func {
 HydraulicXML.pressurize = func( connection ) {
    var found = constant.FALSE;
    var switch = constant.FALSE;
+<<<<<<< HEAD
    var inputkind = "";
    var outputkind = "";
    var input = nil;
@@ -120,6 +154,17 @@ HydraulicXML.pressurize = func( connection ) {
 
    # propagate pressure
    component2 = me.components.find( output, outputkind );
+=======
+   var input = nil;
+   var component = nil;
+   var component2 = nil;
+   var output = nil;
+
+   output = connection.get_output();
+
+   # propagate pressure
+   component2 = me.components.find( output );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    if( component2 != nil ) {
        if( !component2.is_propagate() ) {
            switch = connection.get_switch();
@@ -132,8 +177,12 @@ HydraulicXML.pressurize = func( connection ) {
 
             else {
                 input = connection.get_input();
+<<<<<<< HEAD
                 inputkind = connection.get_input_kind();
                 component = me.components.find( input, inputkind );
+=======
+                component = me.components.find( input );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                 if( component != nil ) {
 
                     # input knows its pressure
@@ -152,8 +201,12 @@ HydraulicXML.pressurize = func( connection ) {
            # reservoir can accept pressurization
            if( switch ) {
                input = connection.get_input();
+<<<<<<< HEAD
                inputkind = connection.get_input_kind();
                component = me.components.find( input, inputkind );
+=======
+               component = me.components.find( input );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                if( component != nil ) {
 
                    # input knows its pressure
@@ -294,6 +347,7 @@ HydComponentArray.find_circuit = func( ident ) {
 }
 
 # lookup tables accelerates the search !!!
+<<<<<<< HEAD
 HydComponentArray.find = func( ident, kind ) {
    var found = constant.FALSE;
    var result = nil;
@@ -302,6 +356,13 @@ HydComponentArray.find = func( ident, kind ) {
        result = me.find_supplier( ident );
    }
    elsif( kind == "circuit" ) {
+=======
+HydComponentArray.find = func( ident ) {
+   var found = constant.FALSE;
+   var result = me.find_supplier( ident );
+
+   if( result == nil ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        result = me.find_circuit( ident );
    }
 
@@ -310,6 +371,7 @@ HydComponentArray.find = func( ident, kind ) {
    }
 
    if( !found ) {
+<<<<<<< HEAD
        print("Hydraulic : component not found ", ident, " (", kind, ")");
    }
 
@@ -337,6 +399,9 @@ HydComponentArray.find_kind = func( ident ) {
 
    if( !found ) {
        print("Hydraulic : component kind not found ", ident);
+=======
+       print("Hydraulic : component not found ", ident);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 
    return result;
@@ -685,14 +750,21 @@ HydConnectionArray.new = func {
    return obj;
 };
 
+<<<<<<< HEAD
 HydConnectionArray.add = func( node, components ) {
+=======
+HydConnectionArray.add = func( node ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var prop = "";
    var child = nil;
    var result = nil;
    var input = node.getChild("input").getValue();
    var output = node.getChild("output").getValue();
+<<<<<<< HEAD
    var inputkind = components.find_kind( input );
    var outputkind = components.find_kind( output );
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var switch = node.getNode("switch");
 
    if( switch != nil ) {
@@ -703,7 +775,11 @@ HydConnectionArray.add = func( node, components ) {
        }
    }
 
+<<<<<<< HEAD
    result = HydConnection.new( input, inputkind, output, outputkind, prop );
+=======
+   result = HydConnection.new( input, output, prop );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    append(me.connections, result);
 
    me.nb_connections = me.nb_connections + 1;
@@ -724,6 +800,7 @@ HydConnectionArray.get = func( index ) {
 
 HydConnection = {};
 
+<<<<<<< HEAD
 HydConnection.new = func( input, inputkind, output, outputkind, prop ) {
    var obj = { parents : [HydConnection],
 
@@ -731,6 +808,13 @@ HydConnection.new = func( input, inputkind, output, outputkind, prop ) {
                input_kind : inputkind,
                output : output,
                output_kind : outputkind,
+=======
+HydConnection.new = func( input, output, prop ) {
+   var obj = { parents : [HydConnection],
+
+               input : input,
+               output : output,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                prop : prop
          };
 
@@ -741,18 +825,24 @@ HydConnection.get_input = func {
    return me.input;
 }
 
+<<<<<<< HEAD
 HydConnection.get_input_kind = func {
    return me.input_kind;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 HydConnection.get_output = func {
    return me.output;
 }
 
+<<<<<<< HEAD
 HydConnection.get_output_kind = func {
    return me.output_kind;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 HydConnection.get_switch = func {
     # switch is optional, on by default
     var switch = constant.TRUE;

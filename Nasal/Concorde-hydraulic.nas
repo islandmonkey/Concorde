@@ -235,6 +235,7 @@ HydGround.schedule = func {
 }
 
 
+<<<<<<< HEAD
 # ============
 # WHEEL CHOCKS
 # ============
@@ -293,6 +294,8 @@ WheelChocks.meter = func( index ) {
 }
 
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 # ======
 # BRAKES
 # ======
@@ -302,6 +305,7 @@ Brakes = {};
 Brakes.new = func {
    var obj = { parents : [Brakes,System], 
 
+<<<<<<< HEAD
                heat : BrakesHeat.new(),
                wheelchock : WheelChocks.new(),
 
@@ -324,6 +328,29 @@ Brakes.new = func {
                emergaccupsi : 0.0,
                leftemergpsi : 0.0,
                rightemergpsi : 0.0
+=======
+           heat : BrakesHeat.new(),
+
+           HYDSEC : 1.0,                               # refresh rate
+
+           BRAKEACCUPSI : 3000.0,                      # yellow emergency/parking brakes accumulator
+           BRAKEMAXPSI : 1200.0,                       # max brake pressure
+           BRAKEYELLOWPSI : 900.0,                     # max abnormal pressure (yellow)
+           BRAKEGREENPSI : 400.0,                      # max normal pressure (green)
+           BRAKERESIDUALPSI : 15.0,                    # residual pressure of emergency brakes (1 atmosphere)
+           HYDNOPSI : 0.0,
+
+           BRAKEPSIPSEC : 400.0,                       # reaction time, when one applies brakes
+
+           BRAKERATEPSI : 0.0,
+
+           normalaccupsi : 0.0,
+           leftbrakepsi : 0.0,
+           rightbrakepsi : 0.0,
+           emergaccupsi : 0.0,
+           leftemergpsi : 0.0,
+           rightemergpsi : 0.0
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
          };
 
    obj.init();
@@ -352,31 +379,52 @@ Brakes.lever = func {
     var pos = constantaero.BRAKENORMAL;
 
     # parking brake
+<<<<<<< HEAD
     if( me.dependency["gear-ctrl"].getChild("brake-parking-lever").getValue() ) {
+=======
+    if( me.dependency["gear"].getChild("brake-parking-lever").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         pos = constantaero.BRAKEPARKING;
     }
 
     # emergency (must be set by Captain)
+<<<<<<< HEAD
     elsif( me.dependency["gear-ctrl"].getChild("brake-emergency").getValue() ) {
+=======
+    elsif( me.dependency["gear"].getChild("brake-emergency").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         pos = constantaero.BRAKEEMERGENCY;
     }
 
     # for 3D lever
+<<<<<<< HEAD
     me.dependency["gear-ctrl"].getChild("brake-pos-norm").setValue(pos);
+=======
+    me.dependency["gear"].getChild("brake-pos-norm").setValue(pos);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Brakes.emergencyexport = func {
     var value = constant.TRUE;
     var value2 = constant.FALSE;
 
+<<<<<<< HEAD
     if( me.dependency["gear-ctrl"].getChild("brake-emergency").getValue() ) {
+=======
+    if( me.dependency["gear"].getChild("brake-emergency").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         value = constant.FALSE;
         value2 = constant.TRUE;
     }
 
     # toggles between parking and emergency
+<<<<<<< HEAD
     me.dependency["gear-ctrl"].getChild("brake-emergency").setValue(value);
     me.dependency["gear-ctrl"].getChild("brake-parking-lever").setValue(value2);
+=======
+    me.dependency["gear"].getChild("brake-emergency").setValue(value);
+    me.dependency["gear"].getChild("brake-parking-lever").setValue(value2);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     me.lever();
 }
@@ -384,13 +432,22 @@ Brakes.emergencyexport = func {
 Brakes.parkingexport = func {
     var value = constant.TRUE;
 
+<<<<<<< HEAD
     if( me.dependency["gear-ctrl"].getChild("brake-parking-lever").getValue() ) {
+=======
+    if( me.dependency["gear"].getChild("brake-parking-lever").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         value = constant.FALSE;
     }
 
     # toggles between parking and normal
+<<<<<<< HEAD
     me.dependency["gear-ctrl"].getChild("brake-emergency").setValue(constant.FALSE);
     me.dependency["gear-ctrl"].getChild("brake-parking-lever").setValue(value);
+=======
+    me.dependency["gear"].getChild("brake-emergency").setValue(constant.FALSE);
+    me.dependency["gear"].getChild("brake-parking-lever").setValue(value);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     me.lever();
 }
@@ -433,7 +490,11 @@ Brakes.has_normal = func {
 
 Brakes.has = func {
     var result = constant.TRUE;
+<<<<<<< HEAD
     var emergency = me.dependency["gear-ctrl"].getChild("brake-emergency").getValue();
+=======
+    var emergency = me.dependency["gear"].getChild("brake-emergency").getValue();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     # TO DO : failure only on left or right
     if( ( !me.has_normal() and !emergency ) or
@@ -466,7 +527,11 @@ Brakes.normal = func( greenpsi, yellowpsi ) {
    var targetbrakepsi = 0.0;
 
    # brake failure
+<<<<<<< HEAD
    if( !me.dependency["gear-ctrl"].getChild("brake-emergency").getValue() ) {
+=======
+   if( !me.dependency["gear"].getChild("brake-emergency").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        targetbrakepsi = me.normalpsi( greenpsi );
 
        # disable normal brake (joystick)
@@ -501,17 +566,29 @@ Brakes.emergency = func( yellowpsi ) {
    var targetbrakepsi = me.emergencypsi( yellowpsi );
 
    # brake parking failure
+<<<<<<< HEAD
    if( me.dependency["gear-ctrl"].getChild("brake-parking-lever").getValue() ) {
+=======
+   if( me.dependency["gear"].getChild("brake-parking-lever").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        # stays in the green area
        targetbrakepsi = me.truncate( targetbrakepsi, me.BRAKEGREENPSI );
        if( me.emergfailure( targetbrakepsi ) ) {
            # disable brake parking (keyboard)
+<<<<<<< HEAD
            me.wheelchock.toggle();
+=======
+           me.wheelchocks();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        }
 
        # visualize apply of parking brake
        else {
+<<<<<<< HEAD
            me.dependency["gear-ctrl"].getChild("brake-parking").setValue(constantaero.BRAKEPARKING);
+=======
+           me.dependency["gear"].getChild("brake-parking").setValue(constantaero.BRAKEPARKING);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
            me.parkingapply( targetbrakepsi );
        }
@@ -519,7 +596,11 @@ Brakes.emergency = func( yellowpsi ) {
 
    # unused emergency/parking brakes have a weaker pressure
    else {
+<<<<<<< HEAD
        me.wheelchock.toggle();
+=======
+       me.wheelchocks();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
        if( me.normalaccupsi >= me.BRAKEACCUPSI ) {
            targetbrakepsi = me.truncate( targetbrakepsi, me.BRAKEMAXPSI );
@@ -532,9 +613,22 @@ Brakes.emergency = func( yellowpsi ) {
            }
        }
    }
+<<<<<<< HEAD
 
    # adjust wheel chocks over ground
    me.wheelchock.schedule();
+=======
+}
+
+Brakes.wheelchocks = func {
+   if( me.dependency["gear"].getChild("wheel-chocks").getValue() ) {
+       me.dependency["gear"].getChild("brake-parking").setValue(constantaero.BRAKEPARKING);
+   }
+
+   else {
+       me.dependency["gear"].getChild("brake-parking").setValue(constantaero.BRAKENORMAL);
+   }
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Brakes.normalpsi = func( pressurepsi ) {
@@ -567,16 +661,26 @@ Brakes.emergencypsi = func( pressurepsi ) {
 }
 
 Brakes.brakeapply = func( leftnormalpsi, rightnormalpsi, targetbrakepsi ) {
+<<<<<<< HEAD
    var leftpsi = me.apply( me.dependency["gear-ctrl"].getChild("brake-left").getPath(), leftnormalpsi, targetbrakepsi );
    var rightpsi = me.apply( me.dependency["gear-ctrl"].getChild("brake-right").getPath(), rightnormalpsi, targetbrakepsi );
+=======
+   var leftpsi = me.apply( me.dependency["gear"].getChild("brake-left").getPath(), leftnormalpsi, targetbrakepsi );
+   var rightpsi = me.apply( me.dependency["gear"].getChild("brake-right").getPath(), rightnormalpsi, targetbrakepsi );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    me.leftbrakepsi = leftpsi;       # BUG ?
    me.rightbrakepsi = rightpsi;       # BUG ?
 }
 
 Brakes.parkingapply = func( targetbrakepsi ) {
+<<<<<<< HEAD
    var leftpsi = me.apply( me.dependency["gear-ctrl"].getChild("brake-parking").getPath(), me.leftemergpsi, targetbrakepsi );
    var rightpsi = me.apply( me.dependency["gear-ctrl"].getChild("brake-parking").getPath(), me.rightemergpsi, targetbrakepsi );
+=======
+   var leftpsi = me.apply( me.dependency["gear"].getChild("brake-parking").getPath(), me.leftemergpsi, targetbrakepsi );
+   var rightpsi = me.apply( me.dependency["gear"].getChild("brake-parking").getPath(), me.rightemergpsi, targetbrakepsi );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    me.leftemergpsi = leftpsi;       # BUG ?
    me.rightemergpsi = rightpsi;       # BUG ?
@@ -754,8 +858,13 @@ BrakesHeat.warming = func {
            var stepkt2 = 0.0;
            var stepdegc = 0.0;
 
+<<<<<<< HEAD
            left = me.dependency["gear-ctrl"].getChild("brake-left").getValue();
            right = me.dependency["gear-ctrl"].getChild("brake-right").getValue();
+=======
+           left = me.dependency["gear"].getChild("brake-left").getValue();
+           right = me.dependency["gear"].getChild("brake-right").getValue();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            allbrakes = left + right;
 
            if( allbrakes > 0.0 ) {
@@ -1197,7 +1306,11 @@ NoseVisor.new = func {
 NoseVisor.init = func() {
     me.inherit_system("/instrumentation/nose-visor");
 
+<<<<<<< HEAD
     me.VISORDOWN = me.noinstrument["setting"][1].getValue();
+=======
+    me.VISORDOWN = getprop("/sim/flaps/setting[1]");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 NoseVisor.has_nose_down = func {
@@ -1424,8 +1537,15 @@ Doors.new = func {
 
                DOORCLOSED : 0.0,
 
+<<<<<<< HEAD
                flightdeck : nil,
                engineerdeck : nil
+=======
+# 10 s, door closed
+               flightdeck : aircraft.door.new("controls/doors/flight-deck", 10.0),
+# 4 s, deck out
+               engineerdeck : aircraft.door.new("controls/doors/engineer-deck", 4.0)
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
          };
 
 # user customization
@@ -1437,12 +1557,15 @@ Doors.new = func {
 Doors.init = func {
    me.inherit_system( "/systems/doors" );
 
+<<<<<<< HEAD
    # 10 s, door closed
    me.flightdeck = aircraft.door.new(me.itself["root-ctrl"].getNode("flight-deck").getPath(), 10.0);
 
    # 4 s, deck out
    me.engineerdeck = aircraft.door.new(me.itself["root-ctrl"].getNode("engineer-deck").getPath(), 4.0);
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    if( me.itself["root-ctrl"].getNode("flight-deck").getChild("opened").getValue() ) {
        me.flightdeck.toggle();
    }
@@ -1458,7 +1581,11 @@ Doors.flightdeckexport = func {
        # locked in flight
        if( me.itself["root-ctrl"].getNode("flight-deck").getChild("normal").getValue() ) {
            # can open only from inside
+<<<<<<< HEAD
            if( me.noinstrument["view"].getValue() > me.INSIDEDECKZM ) {
+=======
+           if( getprop("/sim/current-view/z-offset-m") > me.INSIDEDECKZM ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                allowed = constant.FALSE;
            }
        }

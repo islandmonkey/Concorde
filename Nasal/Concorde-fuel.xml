@@ -274,6 +274,7 @@
      </tank>
     </filling>
 
+<<<<<<< HEAD
 <!-- Low level, test of cross feed (3500 kg fuel). -->
     <filling n="8">
      <comment>low level (cross feed)</comment>
@@ -318,6 +319,8 @@
      </tank>
     </filling>
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <!-- other -->
 
 </PropertyList>

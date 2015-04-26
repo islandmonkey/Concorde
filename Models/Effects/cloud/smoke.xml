@@ -29,15 +29,25 @@
 
     <condition>
      <and>
+<<<<<<< HEAD
       <property>/controls/environment/smoke</property>
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <greater-than>
        <property alias="/params/n2"/>
        <value>70</value>                                        <!-- takeoff + landing -->
       </greater-than>
       <less-than>
+<<<<<<< HEAD
        <property>/velocities/airspeed-kt</property>
        <value>250</value>                                       <!-- not visible in flight (guess) -->
       </less-than>
+=======
+       <property>/position/altitude-agl-ft</property>
+       <value>2000</value>                                      <!-- not visible in flight (altitude winds ?) -->
+      </less-than>
+      <property>/controls/environment/smoke</property>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
      </and>
     </condition>
 

@@ -3,7 +3,16 @@
 <!-- INS at scale :
 
      - test by push.
+<<<<<<< HEAD
      - warning lights are not directly lighted by roof.
+=======
+
+
+     OSG lighting :
+
+     - only 1 material per object (child included).
+     - groups are allowed.
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 
      TO DO :
@@ -36,6 +45,7 @@
  <path>INS.ac</path> 
 
   <animation>
+<<<<<<< HEAD
    <name>INS</name>
    <object-name>Plate</object-name>
    <object-name>LeftDisplay</object-name>
@@ -63,6 +73,10 @@
   <animation>
    <type>material</type>
    <object-name>INS</object-name>
+=======
+   <type>material</type>
+   <object-name>Plate</object-name>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <emission>
     <red>0.71</red>
     <green>0.79</green>

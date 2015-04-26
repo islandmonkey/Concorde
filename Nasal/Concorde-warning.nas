@@ -30,7 +30,10 @@ Gpws.new = func {
 
 Gpws.init = func {
    me.inherit_system("/systems/gpws");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    me.decision_init();
 }
 
@@ -65,7 +68,14 @@ Gpws.sound_terrain = func {
        for( var i = 0; i < constantaero.NBAUTOPILOTS; i = i+1 ) {
             aglft = me.dependency["radio-altimeter"][i].getChild("indicated-altitude-ft").getValue();
             speedftps = me.dependency["adc"][i].getNode("output").getChild("vertical-speed-fps").getValue();
+<<<<<<< HEAD
 
+=======
+            if ( speedftps == nil ) {
+              speedftps = 0;
+              print("Enabling workaround for bad ADC " ~ i ~ " vertical speed");
+            }
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
             # excessive rate of descent below 2500 ft.
             if( aglft < me.RADIOFT ) {
                 if( speedftps < me.OVERFTPS ) {

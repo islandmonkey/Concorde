@@ -38,7 +38,11 @@
     <name>5</name>
     <condition>
      <equals>
+<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
+=======
+      <property alias="../../../../../../params/tank-num"/>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>5</value>
      </equals>
     </condition>

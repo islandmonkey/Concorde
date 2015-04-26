@@ -1,7 +1,12 @@
+<<<<<<< HEAD
      Version       SVN/GIT date               Milestone
 ===================================================================================================
      2.13          April 2015                 Conversion of pedestal to 3D (audio).
                                               Conversion of steward panel to 3D.
+=======
+     Version       GIT date                   Milestone
+===================================================================================================
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
      2.12          March 2014                 Conversion of pedestal to 3D (ADF).
      2.11          October 2013               Refined pilot seats (by C. Schmitt).
                                               Conversion of pedestal to 3D (VHF).

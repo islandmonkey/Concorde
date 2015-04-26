@@ -217,6 +217,7 @@ AirDataComputer.schedule = func {
 }
 
 AirDataComputer.computer = func {
+<<<<<<< HEAD
    var altitudeft = 0.0;
    var vmokt = 0.0;
    var soundkt = 0.0;
@@ -234,6 +235,21 @@ AirDataComputer.computer = func {
 
         # maximum operating speed (Mach)
         soundkt = me.getsoundkt( child );
+=======
+   var altitudeft = me.noinstrument["altitude"].getValue();
+
+   if( altitudeft != nil ) {
+       var child = nil;
+
+
+       # maximum operating speed (kt)
+       var weightlb = me.dependency["weight"].getChild("weight-lb").getValue();
+       var vmokt = me.vmo.getvmokt( altitudeft, weightlb ) ;
+
+
+       # maximum operating speed (Mach)
+       var soundkt = me.getsoundkt();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
        # mach number
        var mmomach = vmokt / soundkt;
@@ -249,10 +265,22 @@ AirDataComputer.computer = func {
        }
 
 
+<<<<<<< HEAD
        if( me.itself["root"][i].getChild("serviceable").getValue() and
            me.itself["adc-sys"][i].getChild("switch").getValue() ) {
            child.getChild("vmo-kt").setValue(vmokt);
            child.getChild("mmo-mach").setValue(mmomach);
+=======
+       for( var i = 0; i < constantaero.NBAUTOPILOTS; i = i+1 ) {
+            if( me.itself["root"][i].getChild("serviceable").getValue() and
+                me.itself["adc-sys"][i].getChild("switch").getValue() ) {
+                child = me.itself["root"][i].getNode("output");
+                interpolate(child.getChild("vmo-kt").getPath(), vmokt, 1);
+                interpolate(child.getChild("mmo-mach").getPath(), mmomach, 1);
+                #child.getChild("vmo-kt").setValue(vmokt);
+                #child.getChild("mmo-mach").setValue(mmomach);
+            }
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        }
    }
 }  
@@ -328,7 +356,11 @@ AirDataComputer.ivsisensor = func( index ) {
 
     # cruise above 50000 ft
     if( me.itself["adc-ctrl"].getChild("ivsi-in-cruise").getValue() and
+<<<<<<< HEAD
         ( me.itself["root"][index].getNode("output/altitude-ft").getValue() > constantaero.CRUISEFT ) ) {
+=======
+        ( me.noinstrument["altitude"].getValue() > constantaero.CRUISEFT ) ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         me.ivsi_instrument[index] = constant.TRUE;
         change = constant.TRUE;
 
@@ -383,6 +415,7 @@ AirDataComputer.ivsisensor = func( index ) {
 }
 
 # speed of sound
+<<<<<<< HEAD
 AirDataComputer.getsoundkt = func( child ) {
    var soundkt = 0.0;
 
@@ -391,11 +424,25 @@ AirDataComputer.getsoundkt = func( child ) {
 
    if( speedkt > me.GROUNDKT ) {
        var speedmach = child.getChild("mach").getValue();
+=======
+AirDataComputer.getsoundkt = func {
+   var soundkt = 0.0;
+
+   # simplification
+   var speedkt = me.noinstrument["airspeed"].getValue();
+
+   if( speedkt > me.GROUNDKT ) {
+       var speedmach = me.noinstrument["mach"].getValue();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
        soundkt = speedkt / speedmach;
    }
    else {
+<<<<<<< HEAD
        var Tdegc = child.getChild("static-degc").getValue();
+=======
+       var Tdegc = me.noinstrument["temperature"].getValue();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        var soundmps = constant.newtonsoundmps( Tdegc );
 
        soundkt = soundmps * constant.MPSTOKT;
@@ -416,8 +463,11 @@ Altimeter.new = func {
 
                ADC : [ 0, 1, 1 ],
 
+<<<<<<< HEAD
                lastinhg : 29.92,
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                serviceable : [ constant.TRUE, constant.TRUE, constant.TRUE ],
                standby : [ constant.FALSE, constant.FALSE ]
          };
@@ -443,8 +493,11 @@ Altimeter.schedule = func {
             me.failure( i, constant.FALSE );
         }
    }
+<<<<<<< HEAD
 
    me.updategui();
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Altimeter.sensor = func( index ) {
@@ -452,7 +505,10 @@ Altimeter.sensor = func( index ) {
    var settinginhg = 0.0;
    var indication = "";
    var setting = "";
+<<<<<<< HEAD
    var setting2 = "";
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var child = nil;
 
    # sensor swap
@@ -464,14 +520,20 @@ Altimeter.sensor = func( index ) {
 
        if( me.standby[index] ) {
            indication = me.noinstrument["sensor"][index].getChild("indicated-altitude-ft").getPath();
+<<<<<<< HEAD
            setting2 = me.noinstrument["sensor"][index].getChild("setting-hpa").getPath();
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            setting = me.noinstrument["sensor"][index].getChild("setting-inhg").getPath();
        }
             
        else {
            child = me.dependency["adc"][index].getChild("output");
            indication = child.getChild("altitude-ft").getPath();
+<<<<<<< HEAD
            setting2 = child.getChild("alt-setting-hpa").getPath();
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            setting = child.getChild("alt-setting-inhg").getPath();
        }
 
@@ -479,9 +541,12 @@ Altimeter.sensor = func( index ) {
        child.unalias();
        child.alias( indication );
 
+<<<<<<< HEAD
        child = me.itself["root"][index].getNode("setting-hpa");
        child.unalias();
        child.alias( setting2 );
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        child = me.itself["root"][index].getNode("setting-inhg");
        child.unalias();
        child.alias( setting );
@@ -523,6 +588,7 @@ Altimeter.failure = func( index, standbymode ) {
    me.itself["root"][index].getChild("warning-flag").setValue( warning );
 }
 
+<<<<<<< HEAD
 # update GUI of instrument setting
 Altimeter.updategui = func {
    var currentinhg = me.itself["root"][0].getNode("setting-inhg").getValue();
@@ -538,6 +604,8 @@ Altimeter.updategui = func {
    }
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 # ========
 # AIRSPEED
@@ -662,7 +730,11 @@ StandbyAirspeed.schedule = func {
        var weightlb = me.dependency["weight"].getChild("weight-lb").getValue();
        var vmokt = me.vmo.getvmokt( altitudeft, weightlb ) ;
 
+<<<<<<< HEAD
        me.itself["root"].getChild("vmo-kt").setValue(vmokt);
+=======
+       interpolate(me.itself["root"].getChild("vmo-kt").getPath(), vmokt, 1);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }  
 
@@ -1484,6 +1556,7 @@ Temperature.isa = func( index ) {
 Markerbeacon = {};
 
 Markerbeacon.new = func {
+<<<<<<< HEAD
    var obj = { parents : [Markerbeacon,System],
 
                TESTSEC : 1.5
@@ -1503,6 +1576,20 @@ Markerbeacon.testexport = func {
    var outer = me.itself["root"].getChild("test-outer").getValue();
    var middle = me.itself["root"].getChild("test-middle").getValue();
    var inner = me.itself["root"].getChild("test-inner").getValue();
+=======
+   var obj = { parents : [Markerbeacon],
+
+               TESTSEC : 1.5
+         };
+   return obj;
+};
+
+# test of marker beacon lights
+Markerbeacon.testexport = func {
+   var outer = getprop("/instrumentation/marker-beacon/test-outer");
+   var middle = getprop("/instrumentation/marker-beacon/test-middle");
+   var inner = getprop("/instrumentation/marker-beacon/test-inner");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    # may press button during test
    if( !outer and !middle and !inner ) {
@@ -1512,6 +1599,7 @@ Markerbeacon.testexport = func {
 
 Markerbeacon.testmarker = func {
    var end = constant.FALSE;
+<<<<<<< HEAD
    var outer = me.itself["root"].getChild("test-outer").getValue();
    var middle = me.itself["root"].getChild("test-middle").getValue();
    var inner = me.itself["root"].getChild("test-inner").getValue();
@@ -1532,6 +1620,28 @@ Markerbeacon.testmarker = func {
    }
    else  {
        me.itself["root"].getChild("test-inner").setValue(constant.FALSE);
+=======
+   var outer = getprop("/instrumentation/marker-beacon/test-outer");
+   var middle = getprop("/instrumentation/marker-beacon/test-middle");
+   var inner = getprop("/instrumentation/marker-beacon/test-inner");
+
+   if( !outer and !middle and !inner ) {
+       setprop("/instrumentation/marker-beacon/test-outer",constant.TRUE);
+       end = constant.FALSE;
+   }
+   elsif( outer ) {
+       setprop("/instrumentation/marker-beacon/test-outer","");
+       setprop("/instrumentation/marker-beacon/test-middle",constant.TRUE);
+       end = constant.FALSE;
+   }
+   elsif( middle ) {
+       setprop("/instrumentation/marker-beacon/test-middle","");
+       setprop("/instrumentation/marker-beacon/test-inner",constant.TRUE);
+       end = constant.FALSE;
+   }
+   else  {
+       setprop("/instrumentation/marker-beacon/test-inner",constant.FALSE);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        end = constant.TRUE;
    }
 
@@ -1549,7 +1659,13 @@ Markerbeacon.testmarker = func {
 Generic = {};
 
 Generic.new = func {
+<<<<<<< HEAD
    var obj = { parents : [Generic,System],
+=======
+   var obj = { parents : [Generic],
+
+               click : nil,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
                generic : aircraft.light.new("/instrumentation/generic",[ 1.5,0.2 ])
          };
@@ -1560,13 +1676,18 @@ Generic.new = func {
 };
 
 Generic.init = func {
+<<<<<<< HEAD
    me.inherit_system("/instrumentation/generic");
+=======
+   me.click = props.globals.getNode("/instrumentation/generic/click");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    me.generic.toggle();
 }
 
 Generic.toggleclick = func {
    var sound = constant.TRUE;
+<<<<<<< HEAD
    var child = me.itself["root"].getChild("click");
 
    if( child.getValue() ) {
@@ -1574,6 +1695,14 @@ Generic.toggleclick = func {
    }
 
    child.setValue( sound );
+=======
+
+   if( me.click.getValue() ) {
+       sound = constant.FALSE;
+   }
+
+   me.click.setValue( sound );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 
@@ -1584,11 +1713,16 @@ Generic.toggleclick = func {
 Transponder = {};
 
 Transponder.new = func {
+<<<<<<< HEAD
    var obj = { parents : [Transponder,System],
+=======
+   var obj = { parents : [Transponder],
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
                TESTSEC : 15
          };
 
+<<<<<<< HEAD
    obj.init();
 
    return obj;
@@ -1602,14 +1736,28 @@ Transponder.testexport = func {
    if( me.itself["root"].getChild("serviceable").getValue() ) {
        if( !me.itself["root-ctrl"].getChild("test").getValue() ) {
            me.itself["root-ctrl"].getChild("test").setValue( constant.TRUE );
+=======
+   return obj;
+};
+
+Transponder.testexport = func {
+   if( getprop("/instrumentation/transponder/serviceable") ) {
+       if( !getprop("/controls/transponder/test") ) {
+           setprop("/controls/transponder/test", constant.TRUE );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            settimer(func { me.test(); }, me.TESTSEC);
        }
    }
 }
 
 Transponder.test = func {
+<<<<<<< HEAD
    if( me.itself["root-ctrl"].getChild("test").getValue() ) {
        me.itself["root-ctrl"].getChild("test").setValue( constant.FALSE );
+=======
+   if( getprop("/controls/transponder/test") ) {
+       setprop("/controls/transponder/test", constant.FALSE );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 
@@ -1621,7 +1769,13 @@ Transponder.test = func {
 AudioPanel = {};
 
 AudioPanel.new = func {
+<<<<<<< HEAD
    var obj = { parents : [AudioPanel,System]
+=======
+   var obj = { parents : [AudioPanel],
+
+               thecrew : nil
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
          };
 
    obj.init();
@@ -1630,7 +1784,11 @@ AudioPanel.new = func {
 };
 
 AudioPanel.init = func {
+<<<<<<< HEAD
    me.inherit_system("/instrumentation/audio");
+=======
+   me.thecrew = props.globals.getNode("/controls/audio/crew");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 AudioPanel.headphones = func( marker, panel, seat ) {
@@ -1646,7 +1804,11 @@ AudioPanel.headphones = func( marker, panel, seat ) {
 
    # each crew member has an audio panel
    if( panel ) {
+<<<<<<< HEAD
        audio = me.itself["root-ctrl"].getChild("crew").getNode(seat);
+=======
+       audio = me.thecrew.getNode(seat);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
        if( audio != nil ) {
            adf1  = audio.getNode("adf[0]/volume").getValue();
@@ -1662,6 +1824,7 @@ AudioPanel.headphones = func( marker, panel, seat ) {
 }
 
 AudioPanel.send = func( adf1, adf2, comm1, comm2, nav1, nav2, marker ) {
+<<<<<<< HEAD
    me.dependency["adf"][0].getChild("volume-norm").setValue(adf1);
    me.dependency["adf"][1].getChild("volume-norm").setValue(adf2);
    me.dependency["comm"][0].getChild("volume").setValue(comm1);
@@ -1669,6 +1832,15 @@ AudioPanel.send = func( adf1, adf2, comm1, comm2, nav1, nav2, marker ) {
    me.dependency["nav"][1].getChild("volume").setValue(nav1);
    me.dependency["nav"][2].getChild("volume").setValue(nav2);
    me.dependency["marker"].getChild("audio-btn").setValue(marker);
+=======
+   setprop("/instrumentation/adf[0]/volume-norm",adf1);
+   setprop("/instrumentation/adf[1]/volume-norm",adf2);
+   setprop("/instrumentation/comm[0]/volume",comm1);
+   setprop("/instrumentation/comm[1]/volume",comm2);
+   setprop("/instrumentation/nav[1]/volume",nav1);
+   setprop("/instrumentation/nav[2]/volume",nav2);
+   setprop("/instrumentation/marker-beacon/audio-btn",marker);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 

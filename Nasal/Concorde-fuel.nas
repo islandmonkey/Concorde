@@ -56,8 +56,13 @@ Fuel.init = func {
     me.PUMPPMIN = me.PUMPPMIN0;
     me.PUMPLB = me.PUMPLB0;
 
+<<<<<<< HEAD
     me.parser.init_FuelXML("/systems/fuel");
     me.tanksystem.init_TankXML();
+=======
+    me.tanksystem.initinstrument();
+    me.tanksystem.presetfuel();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     me.savestate();
 }
@@ -750,14 +755,22 @@ Tanks.new = func {
 }
 
 Tanks.init = func {
+<<<<<<< HEAD
     me.inherit_tankXML("/systems/fuel");
+=======
+    me.inherit_tankXML();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Tanks.amber_fuel = func {
    var result = constant.FALSE;
 
    for( var i = 0; i < constantaero.NBENGINES; i = i+1 ) {
+<<<<<<< HEAD
         if( me.tankspath[i].getChild("level-lbs").getValue() <= me.LOWLEVELLB[i] ) {
+=======
+        if( me.tanks[i].getChild("level-lbs").getValue() <= me.LOWLEVELLB[i] ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
             result = constant.TRUE;
             break;
         }
@@ -766,7 +779,11 @@ Tanks.amber_fuel = func {
    if( !result ) {
        # LP valve
        for( var i = 13; i <= 16; i = i+1 ) {
+<<<<<<< HEAD
             if( me.tankspath[i].getChild("level-lbs").getValue() <= me.HPVALVELB ) {
+=======
+            if( me.tanks[i].getChild("level-lbs").getValue() <= me.HPVALVELB ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                 result = constant.TRUE;
                 break;
             }
@@ -797,6 +814,7 @@ Tanks.inittank = func( no, contentlb, overfull, underfull, lowlevel ) {
    # optional :  must be created by XML
    if( overfull ) {
        valuelb = contentlb * me.OVERFULL;
+<<<<<<< HEAD
        me.tankspath[no].getChild("over-full-lb").setValue( valuelb );
    }
    if( underfull ) {
@@ -805,6 +823,16 @@ Tanks.inittank = func( no, contentlb, overfull, underfull, lowlevel ) {
    }
    if( lowlevel ) {
        me.tankspath[no].getChild("low-level-lbs").setValue( me.LOWLEVELLB[no] );
+=======
+       me.tanks[no].getChild("over-full-lb").setValue( valuelb );
+   }
+   if( underfull ) {
+       valuelb = contentlb * me.UNDERFULL;
+       me.tanks[no].getChild("under-full-lb").setValue( valuelb );
+   }
+   if( lowlevel ) {
+       me.tanks[no].getChild("low-level-lbs").setValue( me.LOWLEVELLB[no] );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 

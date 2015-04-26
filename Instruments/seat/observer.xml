@@ -1,7 +1,10 @@
 <?xml version="1.0" ?> 
 
+<<<<<<< HEAD
 <!-- auto smooth is disabled (except rail). -->
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <PropertyList> 
  <path>seat-engineer.ac</path> 
 

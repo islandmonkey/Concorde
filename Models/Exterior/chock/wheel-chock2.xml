@@ -3,11 +3,14 @@
 <!-- wood wheel chock -->
 
 <PropertyList> 
+<<<<<<< HEAD
 
  <params>
   <height>/systems/gear/gear[1]/chock-z-m</height>
  </params>
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
  <path>chock.ac</path> 
 
  <animation>
@@ -24,6 +27,7 @@
   <texture>chock-wood.png</texture>
  </animation>
 
+<<<<<<< HEAD
  <animation>
   <type>translate</type>
   <object-name>chock</object-name>
@@ -36,4 +40,6 @@
   </axis>
  </animation>
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 </PropertyList>

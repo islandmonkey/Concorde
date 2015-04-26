@@ -1,7 +1,10 @@
 <?xml version="1.0" ?> 
 
+<<<<<<< HEAD
 <!-- auto smooth is disabled. -->
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <PropertyList> 
  <path>seat-observer2.ac</path> 
 
@@ -20,8 +23,13 @@
  <animation>
   <type>material</type>
   <object-name>Seat</object-name>
+<<<<<<< HEAD
   <property-base>sim/model/livery/</property-base>
   <texture-prop>texture-seat</texture-prop>
+=======
+  <property-base>sim/model/liveryseat/</property-base>
+  <texture-prop>texture</texture-prop>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
  </animation>
 
  <animation>

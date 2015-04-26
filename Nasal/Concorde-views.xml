@@ -27,7 +27,11 @@
      <!-- x/y/z == right/up/back -->
      <x-offset-m archive="y">-0.452</x-offset-m>
      <y-offset-m archive="y">1.530</y-offset-m>
+<<<<<<< HEAD
      <z-offset-m archive="y">8.08</z-offset-m>
+=======
+     <z-offset-m archive="y">8.03</z-offset-m>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
      <pitch-offset-deg archive="y">-17.0</pitch-offset-deg> <!-- look at the instruments -->
    </config>
   </view>

@@ -14,9 +14,15 @@ FuelXML.new = func {
 
                FUELSEC : 1.0,
 
+<<<<<<< HEAD
                configpath : nil,
                iterationspath : nil,
                systempath : nil,
+=======
+               config : nil,
+               fuel : nil,
+               iterations : nil,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
                components : FuelComponentArray.new(),
                connections : FuelConnectionArray.new()
@@ -27,31 +33,49 @@ FuelXML.new = func {
    return obj;
 };
 
+<<<<<<< HEAD
 FuelXML.init = func {
 }
 
 # creates all propagate variables
 FuelXML.init_FuelXML = func( path ) {
+=======
+# creates all propagate variables
+FuelXML.init = func {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var children = nil;
    var nb_children = 0;
    var component = nil;
 
+<<<<<<< HEAD
    me.systempath = props.globals.getNode(path);
    me.configpath = me.systempath.getNode("internal/config");
    me.iterationspath = me.systempath.getNode("internal/iterations");
 
    children = me.configpath.getChildren("supplier");
+=======
+   me.config = props.globals.getNode("/systems/fuel/internal/config");
+   me.fuel = props.globals.getNode("/systems/fuel");
+   me.iterations = props.globals.getNode("/systems/fuel/internal/iterations");
+
+   children = me.config.getChildren("supplier");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_supplier( children[i] );
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("circuit");
+=======
+   children = me.config.getChildren("circuit");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_circuit( children[i] );
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("connect");
    nb_children = size( children );
    for( i = 0; i < nb_children; i = i+1 ) {
@@ -68,6 +92,24 @@ FuelXML.init_FuelXML = func( path ) {
    nb_children = size( children );
    for( i = 0; i < nb_children; i = i+1 ) {
         me.connections.add_transfer( children[i], me.components );
+=======
+   children = me.config.getChildren("connect");
+   nb_children = size( children );
+   for( i = 0; i < nb_children; i = i+1 ) {
+        me.connections.add_connect( children[i] );
+   }
+
+   children = me.config.getChildren("inter-connect");
+   nb_children = size( children );
+   for( i = 0; i < nb_children; i = i+1 ) {
+        me.connections.add_interconnect( children[i] );
+   }
+
+   children = me.config.getChildren("transfer");
+   nb_children = size( children );
+   for( i = 0; i < nb_children; i = i+1 ) {
+        me.connections.add_transfer( children[i] );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 
@@ -80,7 +122,11 @@ FuelXML.schedule = func( pumplb, tanksystem ) {
 
    me.clear();
 
+<<<<<<< HEAD
    if( me.systempath.getChild("serviceable").getValue() ) {
+=======
+   if( me.fuel.getChild("serviceable").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        # one must absolutely start by suppliers !
        iter = 1;
        for( var i = 0; i < me.components.count_supplier(); i = i+1 ) {
@@ -109,7 +155,11 @@ FuelXML.schedule = func( pumplb, tanksystem ) {
             iter = iter + 1;
        }
 
+<<<<<<< HEAD
        me.iterationspath.setValue(iter);
+=======
+       me.iterations.setValue(iter);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 
    me.apply( pumplb, tanksystem );
@@ -118,6 +168,7 @@ FuelXML.schedule = func( pumplb, tanksystem ) {
 FuelXML.pressurize = func( connection ) {
    var found = constant.FALSE;
    var valve = constant.FALSE;
+<<<<<<< HEAD
    var inputkind = "";
    var outputkind = "";
    var input = nil;
@@ -134,6 +185,20 @@ FuelXML.pressurize = func( connection ) {
        input = connection.get_input();
        inputkind = connection.get_input_kind();
        component = me.components.find( input, inputkind );
+=======
+   var input = nil;
+   var component = nil;
+   var component2 = nil;
+   var output = nil;
+
+   output = connection.get_output();
+
+   # propagate fuel pressure
+   component2 = me.components.find( output );
+   if( component2 != nil ) {
+       input = connection.get_input();
+       component = me.components.find( input );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        valve = connection.valve_opened( component );
 
        if( !component2.is_propagate() ) {
@@ -311,6 +376,7 @@ FuelComponentArray.find_circuit = func( ident ) {
 }
 
 # lookup tables accelerates the search !!!
+<<<<<<< HEAD
 FuelComponentArray.find = func( ident, kind ) {
    var found = constant.FALSE;
    var result = nil;
@@ -320,6 +386,13 @@ FuelComponentArray.find = func( ident, kind ) {
        result = me.find_supplier( ident );
    }
    elsif( kind == "circuit" ) {
+=======
+FuelComponentArray.find = func( ident ) {
+   var found = constant.FALSE;
+   var result = me.find_supplier( ident );
+
+   if( result == nil ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        result = me.find_circuit( ident );
    }
 
@@ -334,6 +407,7 @@ FuelComponentArray.find = func( ident, kind ) {
    return result;
 }
 
+<<<<<<< HEAD
 FuelComponentArray.find_kind = func( ident ) {
    var found = constant.FALSE;
    var result = "";
@@ -360,6 +434,8 @@ FuelComponentArray.find_kind = func( ident ) {
    return result;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 FuelComponentArray.count_supplier = func {
    return me.nb_suppliers;
 }
@@ -640,6 +716,7 @@ FuelTank.clear = func() {
 }
 
 FuelTank.apply = func( pumpsystem, pumplb ) {
+<<<<<<< HEAD
    if( me.nb_source > 1 ) {
        var steplb = 0.0;
        var levellb = 0.0;
@@ -668,6 +745,8 @@ FuelTank.apply = func( pumpsystem, pumplb ) {
        }
    }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    for( var i = 0; i < me.nb_source; i = i+1 ) {
         pumpsystem.transfertanks( me.tank_index[0], me.tank_source[i], pumplb );
    }
@@ -752,6 +831,7 @@ FuelConnectionArray.new = func {
    return obj;
 };
 
+<<<<<<< HEAD
 FuelConnectionArray.add_connect = func( node, components ) {
    var result = nil;
    var input = node.getChild("input").getValue();
@@ -786,6 +866,36 @@ FuelConnectionArray.add_transfer = func( node, components ) {
    var pumps = node.getChildren("pump");
 
    result = FuelTransfer.new( input, inputkind, output, outputkind, valves, pumps );
+=======
+FuelConnectionArray.add_connect = func( node ) {
+   var result = nil;
+   var input = node.getChild("input").getValue();
+   var output = node.getChild("output").getValue();
+   var valves = node.getChildren("valve");
+
+   result = FuelConnect.new( input, output, valves );
+   me.add( result );
+}
+
+FuelConnectionArray.add_interconnect = func( node ) {
+   var result = nil;
+   var input = node.getChild("input").getValue();
+   var output = node.getChild("output").getValue();
+   var valves = node.getChildren("valve");
+
+   result = FuelInterconnect.new( input, output, valves );
+   me.add_inter( result );
+}
+
+FuelConnectionArray.add_transfer = func( node ) {
+   var result = nil;
+   var input = node.getChild("input").getValue();
+   var output = node.getChild("output").getValue();
+   var valves = node.getChildren("valve");
+   var pumps = node.getChildren("pump");
+
+   result = FuelTransfer.new( input, output, valves, pumps );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    me.add( result );
 }
 
@@ -824,6 +934,7 @@ FuelConnectionArray.get_inter = func( index ) {
 
 FuelConnection = {};
 
+<<<<<<< HEAD
 FuelConnection.new = func( input, inputkind, output, outputkind ) {
    var obj = { parents : [FuelConnection],
 
@@ -831,6 +942,13 @@ FuelConnection.new = func( input, inputkind, output, outputkind ) {
            input_kind : inputkind,
            output : output,
            output_kind : outputkind,
+=======
+FuelConnection.new = func( input, output ) {
+   var obj = { parents : [FuelConnection],
+
+           input : input,
+           output : output,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
            nb_valves : 0,
            valves : [],
@@ -841,15 +959,23 @@ FuelConnection.new = func( input, inputkind, output, outputkind ) {
    return obj;
 };
 
+<<<<<<< HEAD
 FuelConnection.inherit_connection = func( input, inputkind, output, outputkind, allvalves ) {
    var obj = FuelConnection.new( input, inputkind, output, outputkind );
+=======
+FuelConnection.inherit_connection = func( input, output, allvalves ) {
+   var obj = FuelConnection.new( input, output );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    me.input = obj.input;
    me.output = obj.output;
 
+<<<<<<< HEAD
    me.input_kind = obj.input_kind;
    me.output_kind = obj.output_kind;
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    me.nb_valves = obj.nb_valves;
    me.valves = obj.valves;
 
@@ -867,18 +993,24 @@ FuelConnection.get_input = func {
    return me.input;
 }
 
+<<<<<<< HEAD
 FuelConnection.get_input_kind = func {
    return me.input_kind;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 FuelConnection.get_output = func {
    return me.output;
 }
 
+<<<<<<< HEAD
 FuelConnection.get_output_kind = func {
    return me.output_kind;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 FuelConnection.get_valve = func {
    var result = constant.FALSE;
 
@@ -909,18 +1041,31 @@ FuelConnection.valve_opened = func( component ) {
 
 FuelConnect = {};
 
+<<<<<<< HEAD
 FuelConnect.new = func( input, inputkind, output, outputkind, allvalves ) {
+=======
+FuelConnect.new = func( input, output, allvalves ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var obj = { parents : [FuelConnect,FuelConnection]
 
          };
 
+<<<<<<< HEAD
    obj.init( input, inputkind, output, outputkind, allvalves );
+=======
+   obj.init( input, output, allvalves );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    return obj;
 };
 
+<<<<<<< HEAD
 FuelConnect.init = func( input, inputkind, output, outputkind, allvalves ) {
    me.inherit_connection( input, inputkind, output, outputkind, allvalves );
+=======
+FuelConnect.init = func( input, output, allvalves ) {
+   me.inherit_connection( input, output, allvalves );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 
@@ -930,18 +1075,31 @@ FuelConnect.init = func( input, inputkind, output, outputkind, allvalves ) {
 
 FuelInterconnect = {};
 
+<<<<<<< HEAD
 FuelInterconnect.new = func( input, inputkind, output, outputkind, allvalves ) {
+=======
+FuelInterconnect.new = func( input, output, allvalves ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var obj = { parents : [FuelInterconnect,FuelConnection]
 
          };
 
+<<<<<<< HEAD
    obj.init( input, inputkind, output, outputkind, allvalves );
+=======
+   obj.init( input, output, allvalves );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    return obj;
 };
 
+<<<<<<< HEAD
 FuelInterconnect.init = func( input, inputkind, output, outputkind, allvalves ) {
    me.inherit_connection( input, inputkind, output, outputkind, allvalves );
+=======
+FuelInterconnect.init = func( input, output, allvalves ) {
+   me.inherit_connection( input, output, allvalves );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 FuelInterconnect.apply = func( componentarray, pumpsystem, pumplb ) {
@@ -967,20 +1125,33 @@ FuelInterconnect.apply = func( componentarray, pumpsystem, pumplb ) {
 
 FuelTransfer = {};
 
+<<<<<<< HEAD
 FuelTransfer.new = func( input, inputkind, output, outputkind, allvalves, allpumps ) {
+=======
+FuelTransfer.new = func( input, output, allvalves, allpumps ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var obj = { parents : [FuelTransfer,FuelConnection],
 
                nb_pumps : 0,
                pumps : []
          };
 
+<<<<<<< HEAD
    obj.init( input, inputkind, output, outputkind, allvalves, allpumps );
+=======
+   obj.init( input, output, allvalves, allpumps );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    return obj;
 };
 
+<<<<<<< HEAD
 FuelTransfer.init = func( input, inputkind, output, outputkind, allvalves, allpumps ) {
    me.inherit_connection( input, inputkind, output, outputkind, allvalves );
+=======
+FuelTransfer.init = func( input, output, allvalves, allpumps ) {
+   me.inherit_connection( input, output, allvalves );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    me.nb_pumps = size( allpumps );
 
@@ -1030,21 +1201,33 @@ TankXML.new = func {
 
                nb_tanks : 0,
 
+<<<<<<< HEAD
                controlspath : nil,
                dialogpath : nil,
                fillingspath : nil,
                systempath : nil,
                tankspath : nil
+=======
+               fillings : nil,
+               pumps : nil,
+               tankcontrols : nil,
+               tanks : nil
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
          };
 
     return obj;
 }
 
+<<<<<<< HEAD
 TankXML.inherit_tankXML = func( path ) {
+=======
+TankXML.inherit_tankXML = func {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     var obj = TankXML.new();
 
     me.pumpsystem = obj.pumpsystem;
 
+<<<<<<< HEAD
     me.systempath = props.globals.getNode(path);
     me.dialogpath = me.systempath.getNode("tanks/dialog");
     me.controlspath = props.globals.getNode("/controls/fuel").getChildren("tank");
@@ -1052,10 +1235,19 @@ TankXML.inherit_tankXML = func( path ) {
     me.fillingspath = me.systempath.getChild("tanks").getChildren("filling");
 
     me.nb_tanks = size(me.tankspath);
+=======
+    me.tankcontrols = props.globals.getNode("/controls/fuel").getChildren("tank");
+    me.tanks = props.globals.getNode("/consumables/fuel").getChildren("tank");
+    me.fillings = props.globals.getNode("/systems/fuel/tanks").getChildren("filling");
+    me.pumps = props.globals.getNode("/controls/fuel/pumps");
+
+    me.nb_tanks = size(me.tanks);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     me.initcontent();
 }
 
+<<<<<<< HEAD
 TankXML.init_TankXML = func {
     me.initinstrument();
     me.presetfuel();
@@ -1063,6 +1255,10 @@ TankXML.init_TankXML = func {
 
 TankXML.initcontent = func {
     me.inherit_initcontent();
+=======
+TankXML.initcontent = func {
+    me.inherit_content();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 # fuel initialization
@@ -1070,14 +1266,20 @@ TankXML.inherit_initcontent = func {
    var densityppg = 0.0;
 
    for( var i=0; i < me.nb_tanks; i=i+1 ) {
+<<<<<<< HEAD
         densityppg = me.tankspath[i].getChild("density-ppg").getValue();
         me.CONTENTLB[me.TANKNAME[i]] = me.tankspath[i].getChild("capacity-gal_us").getValue() * densityppg;
+=======
+        densityppg = me.tanks[i].getChild("density-ppg").getValue();
+        me.CONTENTLB[me.TANKNAME[i]] = me.tanks[i].getChild("capacity-gal_us").getValue() * densityppg;
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 
 # change by dialog
 TankXML.menu = func {
    var change = constant.FALSE;
+<<<<<<< HEAD
    var last = me.systempath.getChild("presets").getValue();
    var comment = me.dialogpath.getValue();
 
@@ -1087,6 +1289,17 @@ TankXML.menu = func {
 
             # for aircraft-data
             me.systempath.getChild("presets").setValue(i);
+=======
+   var last = getprop("/systems/fuel/presets");
+   var comment = getprop("/systems/fuel/tanks/dialog");
+
+   for( var i=0; i < size(me.fillings); i=i+1 ) {
+        if( me.fillings[i].getChild("comment").getValue() == comment ) {
+            me.load( i );
+
+            # for aircraft-data
+            setprop("/systems/fuel/presets",i);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
             if( i != last ) {
                 change = constant.TRUE;
             }
@@ -1101,25 +1314,43 @@ TankXML.menu = func {
 # fuel configuration
 TankXML.presetfuel = func {
    var value = "";
+<<<<<<< HEAD
    var fuel = me.systempath.getChild("presets").getValue();
    var dialog = me.dialogpath.getValue();
+=======
+   var fuel = getprop("/systems/fuel/presets");
+   var dialog = getprop("/systems/fuel/tanks/dialog");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    # default is 0
    if( fuel == nil ) {
        fuel = 0;
    }
 
+<<<<<<< HEAD
    if( fuel < 0 or fuel >= size(me.fillingspath) ) {
+=======
+   if( fuel < 0 or fuel >= size(me.fillings) ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        fuel = 0;
    } 
 
    # to detect change
+<<<<<<< HEAD
    me.systempath.getChild("presets").setValue(fuel);
 
    # copy to dialog
    if( dialog == "" or dialog == nil ) {
        value = me.fillingspath[fuel].getChild("comment").getValue();
        me.dialogpath.setValue(value);
+=======
+   setprop("/systems/fuel/presets",fuel);
+
+   # copy to dialog
+   if( dialog == "" or dialog == nil ) {
+       value = me.fillings[fuel].getChild("comment").getValue();
+       setprop("/systems/fuel/tanks/dialog", value);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 
    me.load( fuel );
@@ -1128,7 +1359,11 @@ TankXML.presetfuel = func {
 TankXML.load = func( fuel ) {
    var child = nil;
    var levelgalus = 0.0;
+<<<<<<< HEAD
    var presets = me.fillingspath[fuel].getChildren("tank");
+=======
+   var presets = me.fillings[fuel].getChildren("tank");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    for( var i=0; i < size(presets); i=i+1 ) {
         child = presets[i].getChild("level-gal_us");
@@ -1147,17 +1382,29 @@ TankXML.load = func( fuel ) {
 
 # tank initialization
 TankXML.inherit_inittank = func( no, contentlb ) {
+<<<<<<< HEAD
    me.tankspath[no].getChild("content-lb").setValue( contentlb );
+=======
+   me.tanks[no].getChild("content-lb").setValue( contentlb );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 TankXML.initinstrument = func {
    for( var i=0; i < me.nb_tanks; i=i+1 ) {
+<<<<<<< HEAD
         me.inherit_inittank( i, me.CONTENTLB[me.TANKNAME[i]] );
+=======
+        me.inherit_inittank( i,  me.CONTENTLB[me.TANKNAME[i]] );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 
 TankXML.controls = func( name, switch, index = 0 ) {
+<<<<<<< HEAD
    return me.controlspath[me.TANKINDEX[name]].getChild( switch, index );
+=======
+   return me.tankcontrols[me.TANKINDEX[name]].getChild( switch, index );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 TankXML.getlevellb = func( name ) {
@@ -1168,10 +1415,13 @@ TankXML.getlevelkg = func( name ) {
    return me.pumpsystem.getlevelkg( me.TANKINDEX[name] );
 }
 
+<<<<<<< HEAD
 TankXML.getspacelb = func( name ) {
    return me.pumpsystem.getspacelb( me.TANKINDEX[name], me.CONTENTLB[name] );
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 TankXML.empty = func( name ) {
    return me.pumpsystem.empty( me.TANKINDEX[name] );
 }
@@ -1199,7 +1449,11 @@ TankXML.transfertanks = func( dest, sour, pumplb ) {
 
 # fills completely a tank
 TankXML.filltank = func( dest, sour ) {
+<<<<<<< HEAD
    var pumplb = me.getspacelb( dest );
+=======
+   var pumplb = me.CONTENTLB[dest] - me.getlevellb( dest );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    me.pumpsystem.transfertanks( me.TANKINDEX[dest], me.CONTENTLB[dest], me.TANKINDEX[sour], pumplb );
 }
@@ -1216,8 +1470,11 @@ Pump = {};
 Pump.new = func {
    var obj = { parents : [Pump],
 
+<<<<<<< HEAD
                EMPTYGAL : 0.1,                  # if interconnect, level is never 0.0
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                tanks : nil 
          };
 
@@ -1227,11 +1484,19 @@ Pump.new = func {
 }
 
 Pump.init = func {
+<<<<<<< HEAD
    me.tankspath = props.globals.getNode("/consumables/fuel").getChildren("tank");
 }
 
 Pump.getlevel = func( index ) {
    var tankgalus = me.tankspath[index].getChild("level-gal_us").getValue();
+=======
+   me.tanks = props.globals.getNode("/consumables/fuel").getChildren("tank");
+}
+
+Pump.getlevel = func( index ) {
+   var tankgalus = me.tanks[index].getChild("level-gal_us").getValue();
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    return tankgalus;
 }
@@ -1248,17 +1513,24 @@ Pump.getlevelkg = func( index ) {
    return tankkg;
 }
 
+<<<<<<< HEAD
 Pump.getspacelb = func( index, contentlb ) {
    var freelb = contentlb - me.getlevellb(index);
 
    return freelb;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 Pump.empty = func( index ) {
    var tankgal = me.getlevel(index);
    var result = constant.FALSE;
 
+<<<<<<< HEAD
    if( tankgal < me.EMPTYGAL ) {
+=======
+   if( tankgal == 0.0 ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        result = constant.TRUE;
    }
 
@@ -1269,7 +1541,11 @@ Pump.full = func( index, contentlb ) {
    var tanklb = me.getlevellb(index);
    var result = constant.TRUE;
 
+<<<<<<< HEAD
    if( contentlb - tanklb > me.EMPTYGAL ) {
+=======
+   if( contentlb - tanklb > 0.1 ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        result = constant.FALSE;
    }
 
@@ -1277,7 +1553,11 @@ Pump.full = func( index, contentlb ) {
 }
 
 Pump.setlevel = func( index, levelgalus ) {
+<<<<<<< HEAD
    me.tankspath[index].getChild("level-gal_us").setValue(levelgalus);
+=======
+   me.tanks[index].getChild("level-gal_us").setValue(levelgalus);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Pump.setlevellb = func( index, levellb ) {

@@ -12,9 +12,15 @@ ElectricalXML = {};
 ElectricalXML.new = func {
    var obj = { parents : [ElectricalXML],
 
+<<<<<<< HEAD
                configpath : nil,
                electricalpath : nil,
                iterationspath : nil,
+=======
+               config : nil,
+               electrical : nil,
+               iterations : nil,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
                forced : 0,
 
@@ -27,15 +33,21 @@ ElectricalXML.new = func {
    return obj;
 };
 
+<<<<<<< HEAD
 ElectricalXML.init = func {
 }
 
 # creates all propagate variables
 ElectricalXML.init_ElectricalXML = func( path ) {
+=======
+# creates all propagate variables
+ElectricalXML.init = func {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var children = nil;
    var nb_children = 0;
    var component = nil;
 
+<<<<<<< HEAD
    me.electricalpath = props.globals.getNode(path);
    me.configpath = me.electricalpath.getNode("internal/config");
    me.iterationspath = me.electricalpath.getNode("iterations",constant.DELAYEDNODE);
@@ -43,6 +55,15 @@ ElectricalXML.init_ElectricalXML = func( path ) {
    me.forced = me.electricalpath.getNode("internal/iterations-forced").getValue();
 
    children = me.configpath.getChildren("supplier");
+=======
+   me.config = props.globals.getNode("/systems/electrical/internal/config");
+   me.electrical = props.globals.getNode("/systems/electrical");
+   me.iterations = props.globals.getNode("/systems/electrical/internal/iterations");
+
+   me.forced = props.globals.getNode("/systems/electrical/internal/iterations-forced").getValue();
+
+   children = me.config.getChildren("supplier");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_supplier( children[i] );
@@ -50,7 +71,11 @@ ElectricalXML.init_ElectricalXML = func( path ) {
         component.charge();
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("transformer");
+=======
+   children = me.config.getChildren("transformer");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_transformer( children[i] );
@@ -58,7 +83,11 @@ ElectricalXML.init_ElectricalXML = func( path ) {
         component.charge();
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("bus");
+=======
+   children = me.config.getChildren("bus");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_bus( children[i] );
@@ -66,7 +95,11 @@ ElectricalXML.init_ElectricalXML = func( path ) {
         component.charge();
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("output");
+=======
+   children = me.config.getChildren("output");
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.components.add_output( children[i] );
@@ -74,10 +107,17 @@ ElectricalXML.init_ElectricalXML = func( path ) {
         component.charge();
    }
 
+<<<<<<< HEAD
    children = me.configpath.getChildren("connector");
    nb_children = size( children );
    for( var i = 0; i < nb_children; i = i+1 ) {
         me.connectors.add( children[i], me.components );
+=======
+   children = me.config.getChildren("connector");
+   nb_children = size( children );
+   for( var i = 0; i < nb_children; i = i+1 ) {
+        me.connectors.add( children[i] );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 }
 
@@ -105,7 +145,11 @@ ElectricalXML.schedule = func {
         component.supply();
    }
 
+<<<<<<< HEAD
    if( me.electricalpath.getChild("serviceable").getValue() ) {
+=======
+   if( me.electrical.getChild("serviceable").getValue() ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         iter = 0;
         remain = constant.TRUE;
         while( remain ) {
@@ -129,7 +173,11 @@ ElectricalXML.schedule = func {
             iter = iter + 1;
        }
 
+<<<<<<< HEAD
        me.iterationspath.setValue(iter);
+=======
+       me.iterations.setValue(iter);
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    }
 
    # failure : no voltage
@@ -157,6 +205,7 @@ ElectricalXML.supply = func( connector ) {
    var volts = 0.0;
    var found = constant.FALSE;
    var switch = constant.FALSE;
+<<<<<<< HEAD
    var inputkind = "";
    var outputkind = "";
    var input = nil;
@@ -169,6 +218,17 @@ ElectricalXML.supply = func( connector ) {
 
    # propagate voltage
    component2 = me.components.find( output, outputkind );
+=======
+   var input = nil;
+   var component = nil;
+   var component2 = nil;
+   var output = nil;
+
+   output = connector.get_output();
+
+   # propagate voltage
+   component2 = me.components.find( output );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    if( component2 != nil ) {
        if( !component2.is_propagate() ) {
            switch = connector.get_switch();
@@ -181,8 +241,12 @@ ElectricalXML.supply = func( connector ) {
 
             else {
                 input = connector.get_input();
+<<<<<<< HEAD
                 inputkind = connector.get_input_kind();
                 component = me.components.find( input, inputkind );
+=======
+                component = me.components.find( input );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                 if( component != nil ) {
 
                     # input knows its voltage
@@ -203,8 +267,12 @@ ElectricalXML.supply = func( connector ) {
                # voltages in parallel : if no voltage, can accept another connection
                if( switch ) {
                    input = connector.get_input();
+<<<<<<< HEAD
                    inputkind = connector.get_input_kind();
                    component = me.components.find( input, inputkind );
+=======
+                   component = me.components.find( input );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                    if( component != nil ) {
 
                        # input knows its voltage
@@ -428,6 +496,7 @@ ElecComponentArray.find_output = func( ident ) {
 }
 
 # lookup tables accelerates the search !!!
+<<<<<<< HEAD
 ElecComponentArray.find = func( ident, kind ) {
    var found = constant.FALSE;
    var result = nil;
@@ -442,6 +511,21 @@ ElecComponentArray.find = func( ident, kind ) {
        result = me.find_bus( ident );
    }
    elsif( kind == "output" ) {
+=======
+ElecComponentArray.find = func( ident ) {
+   var found = constant.FALSE;
+   var result = me.find_supplier( ident );
+
+   if( result == nil ) {
+       result = me.find_transformer( ident );
+   }
+
+   if( result == nil ) {
+       result = me.find_bus( ident );
+   }
+
+   if( result == nil ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        result = me.find_output( ident );
    }
 
@@ -456,6 +540,7 @@ ElecComponentArray.find = func( ident, kind ) {
    return result;
 }
 
+<<<<<<< HEAD
 ElecComponentArray.find_kind = func( ident ) {
    var found = constant.FALSE;
    var result = "";
@@ -493,6 +578,8 @@ ElecComponentArray.find_kind = func( ident ) {
    return result;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 ElecComponentArray.count_supplier = func {
    return me.nb_suppliers;
 }
@@ -923,9 +1010,13 @@ ElecConnectorArray.new = func {
    return obj;
 };
 
+<<<<<<< HEAD
 ElecConnectorArray.add = func( node, components ) {
    var inputkind = "";
    var outputkind = "";
+=======
+ElecConnectorArray.add = func( node ) {
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var prop = "";
    var child = nil;
    var result = nil;
@@ -941,10 +1032,14 @@ ElecConnectorArray.add = func( node, components ) {
        }
    }
 
+<<<<<<< HEAD
    inputkind = components.find_kind( input );
    outputkind = components.find_kind( output );
 
    result = ElecConnector.new( input, inputkind, output, outputkind, prop );
+=======
+   result = ElecConnector.new( input, output, prop );
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    append(me.connectors, result);
 
    me.nb_connectors = me.nb_connectors + 1;
@@ -965,6 +1060,7 @@ ElecConnectorArray.get = func( index ) {
 
 ElecConnector = {};
 
+<<<<<<< HEAD
 ElecConnector.new = func( input, inputkind, output, outputkind, prop ) {
    var obj = { parents : [ElecConnector],
 
@@ -972,6 +1068,13 @@ ElecConnector.new = func( input, inputkind, output, outputkind, prop ) {
                input_kind : inputkind,
                output : output,
                output_kind : outputkind,
+=======
+ElecConnector.new = func( input, output, prop ) {
+   var obj = { parents : [ElecConnector],
+
+               input : input,
+               output : output,
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                prop : prop
          };
 
@@ -982,18 +1085,24 @@ ElecConnector.get_input = func {
    return me.input;
 }
 
+<<<<<<< HEAD
 ElecConnector.get_input_kind = func {
    return me.input_kind;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 ElecConnector.get_output = func {
    return me.output;
 }
 
+<<<<<<< HEAD
 ElecConnector.get_output_kind = func {
    return me.output_kind;
 }
 
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 ElecConnector.get_switch = func {
     var switch = constant.TRUE;
 

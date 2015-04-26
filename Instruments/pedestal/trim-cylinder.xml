@@ -4,6 +4,7 @@
   <path>trim-cylinder.ac</path> 
 
   <animation>
+<<<<<<< HEAD
    <name>Trim</name>
    <object-name>TrimCylinder</object-name>
    <object-name>PitchTrimIndex</object-name>
@@ -15,6 +16,10 @@
   <animation>
    <type>material</type>
    <object-name>Trim</object-name>
+=======
+   <type>material</type>
+   <object-name>TrimCylinder</object-name>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <emission>
     <red>0.71</red>
     <green>0.79</green>
@@ -28,6 +33,15 @@
    <object-name>PitchTrimWheel</object-name>
    <property>controls/flight/elevator-trim</property>
    <factor>540</factor>
+<<<<<<< HEAD
+=======
+   <condition>
+    <equals>
+     <property>/autopilot/locks/altitude</property>
+     <value></value>
+    </equals>
+   </condition>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <center>
     <x-m>0.0</x-m>
     <y-m>0.0</y-m>

@@ -14,10 +14,13 @@
       <desc>raise/lower nose</desc>
     </key>
     <key>
+<<<<<<< HEAD
       <name>=</name>
       <desc>menu</desc>
     </key>
     <key>
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <name>left/right</name>
       <desc>autopilot heading</desc>
     </key>
@@ -66,8 +69,13 @@
       <desc>emergency brakes</desc>
     </key>
     <key>
+<<<<<<< HEAD
       <name>f</name>
       <desc>full cockpit</desc>
+=======
+      <name>f/F</name>
+      <desc>full cockpit/aircraft</desc>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     </key>
     <key>
       <name>alt-g</name>
@@ -122,6 +130,17 @@
       <desc>heading hold</desc>
     </key>
     <key>
+<<<<<<< HEAD
+=======
+      <name>ctrl-I</name>
+      <desc>menu</desc>
+    </key>
+    <key>
+      <name>ctrl-J</name>
+      <desc>copilot view</desc>
+    </key>
+    <key>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <name>ctrl-K</name>
       <desc>observer (floating) view</desc>
     </key>
@@ -142,6 +161,7 @@
       <desc>pitch hold</desc>
     </key>
     <key>
+<<<<<<< HEAD
       <name>ctrl-Q</name>
       <desc>virtual crew</desc>
     </key>
@@ -150,6 +170,8 @@
       <desc>abort checklist</desc>
     </key>
     <key>
+=======
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <name>ctrl-S</name>
       <desc>speed acquire</desc>
     </key>
@@ -170,8 +192,17 @@
       <desc>restore floating view</desc>
     </key>
     <key>
+<<<<<<< HEAD
       <name>ctrl-Y</name>
       <desc>copilot view</desc>
+=======
+      <name>ctrl-Z</name>
+      <desc>virtual crew</desc>
+    </key>
+    <key>
+      <name>shift-ctrl-Z</name>
+      <desc>abort checklist</desc>
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     </key>
 
 <!-- FDM ops -->

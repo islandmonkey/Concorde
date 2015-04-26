@@ -49,10 +49,17 @@ override those by providing <w>..</w> and <h>..</h> properties with the
  <h>512</h>
  <y-offset>0</y-offset>
  <view-height>500</view-height>
+<<<<<<< HEAD
 
  <instruments>
 
   <instrument include="Aircraft/Instruments/wxradar.xml">
+=======
+<!--
+ <instruments>
+
+  <instrument include="/Instruments/wxradar.xml">
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <name>Weather Radar</name>
    <condition>
     <or>
@@ -86,5 +93,9 @@ override those by providing <w>..</w> and <h>..</h> properties with the
   </instrument>
 
  </instruments>
+<<<<<<< HEAD
 
+=======
+ -->
+>>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 </PropertyList>
