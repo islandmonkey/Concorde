@@ -10,11 +10,7 @@
 
  <params>
   <inter-valve>/controls/fuel/pumps/cross</inter-valve>
-<<<<<<< HEAD
   <name>/consumables/fuel/tank[5]/name</name>
-=======
-  <tank-num>/consumables/fuel/tank[5]/tank-num</tank-num>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <defined-status>/systems/electrical/power/specific</defined-status>
  </params>
 
@@ -97,11 +93,7 @@
     <name>Title 6 - 7</name>
     <condition>
      <equals>
-<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
-=======
-      <property alias="../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>6</value>
      </equals>
     </condition>

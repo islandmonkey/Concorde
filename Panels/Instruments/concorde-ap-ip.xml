@@ -26,13 +26,6 @@
        <property>/controls/autoflight/altitude</property>
        <value>speed-with-pitch</value>
       </not-equals>
-<<<<<<< HEAD
-=======
-      <equals>
-       <property>/controls/autoflight/speed2</property>
-       <value>maxclimb</value>
-      </equals>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <not include="concorde-cond-voltage-autopilot.xml"/>
      </or>
     </condition>

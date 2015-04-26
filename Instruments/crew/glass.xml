@@ -22,7 +22,6 @@
  </animation>
 
  <animation>
-<<<<<<< HEAD
   <type>material</type>
   <object-name>Glass</object-name>
   <emission>
@@ -34,8 +33,6 @@
  </animation>
 
  <animation>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <type>pick</type>
   <object-name>Glass</object-name>
   <action>

@@ -16,11 +16,8 @@ Constantaero.new = func {
                ENGINE2 : 1,
                ENGINE1 : 0,
 
-<<<<<<< HEAD
                TANKLP : 13,                                      # tank emulating LP valve
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                INS3 : 2,
                INS2 : 1,
                INS1 : 0,
@@ -82,11 +79,7 @@ Constantaero.new = func {
                VREFFULLKT : 162,
                VREFEMPTYKT : 152,
                V1EMPTYKT : 150,                                  # guess
-<<<<<<< HEAD
                TAXIKT : 15,
-=======
-               TAXIKT : 10,
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
                MAXCRUISEFT : 50190,                              # max cruise mode 
                CRUISEFT : 50000,
@@ -291,12 +284,9 @@ Constant.new = func {
                TRUE : 1.0,                             # faster than "true"/"false"
                FALSE : 0.0,
 
-<<<<<<< HEAD
 # property not yet created at startup (should through XML)
                DELAYEDNODE : 1,
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 # ---------------
 # unit conversion
 # ---------------
@@ -672,11 +662,7 @@ System.new = func {
 
 System.inherit_system = func( path, subpath = "" ) {
    var fullpath = path;
-<<<<<<< HEAD
    var ctrlpath = "";
-=======
-   var ctrlpath = string.replace(path,"systems","controls");
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    var obj = System.new();
 
@@ -688,15 +674,12 @@ System.inherit_system = func( path, subpath = "" ) {
    me.itself = obj.itself;
    me.noinstrument = obj.noinstrument;
 
-<<<<<<< HEAD
 
    ctrlpath = string.replace(path,"systems","controls");
    if( fullpath == ctrlpath ) {
        ctrlpath = string.replace(path,"instrumentation","controls");
    }
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    # reserved entries
    if( subpath == "" ) {
        # instrumentation/fuel
@@ -745,10 +728,7 @@ System.loadtree = func( path, table ) {
    var component = "";
    var subcomponent = "";
    var value = "";
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    if( props.globals.getNode(path) != nil ) {
        children = props.globals.getNode(path).getChildren();
        foreach( var c; children ) {
@@ -781,11 +761,7 @@ System.is_moving = func {
 
    # must exist in XML !
    var aglft = me.noinstrument["agl"].getValue();
-<<<<<<< HEAD
    var speedkt = me.noinstrument["speed"].getValue();
-=======
-   var speedkt = me.noinstrument["airspeed"].getValue();
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
    if( aglft >=  constantaero.AGLTOUCHFT or speedkt >= constantaero.TAXIKT ) {
        result = constant.TRUE;

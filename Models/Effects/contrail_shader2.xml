@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-<<<<<<< HEAD
 	<path>Aircraft/Generic/Effects/PersistentContrails/contrail.ac</path>
-=======
-	<path>../../../../Aircraft/Generic/Effects/PersistentContrails/contrail.ac</path>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 	<effect>
 		<inherits-from>Aircraft/Concorde/Models/Effects/contrail1</inherits-from>

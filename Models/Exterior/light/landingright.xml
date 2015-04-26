@@ -134,15 +134,12 @@
  <animation>
   <type>dist-scale</type>
   <object-name>MainLanding</object-name>
-<<<<<<< HEAD
   <condition>
    <greater-than>
     <property>sim/time/sun-angle-rad</property>
     <value>1.57</value>
    </greater-than>
   </condition>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <interpolation>
    <entry>
     <ind>0</ind>

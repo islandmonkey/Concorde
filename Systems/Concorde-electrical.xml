@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<?xml version="1.0"?>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <!-- Concorde electrical system :
 
      - each relight busbar needs AC to start its engine.
@@ -25,7 +21,6 @@
      ==============
      - feeds FG autopilot by /systems/electrical/outputs/autopilot[0].
 -->
-<<<<<<< HEAD
 
 <PropertyList>
 
@@ -33,12 +28,6 @@
   <!-- Supplier list -->
   <!-- ============= -->
 
-=======
-<PropertyList>
-  <!-- ============= -->
-  <!-- Supplier list -->
-  <!-- ============= -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>DC Battery A 5P</name>
     <prop>/systems/electrical/suppliers/battery[0]</prop>
@@ -46,10 +35,7 @@
     <volts>26</volts>
     <amps>160</amps>
   </supplier>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>DC Battery B 6P</name>
     <prop>/systems/electrical/suppliers/battery[1]</prop>
@@ -57,10 +43,7 @@
     <volts>26</volts>
     <amps>160</amps>
   </supplier>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>Engine 1</name>
     <prop>/systems/electrical/suppliers/engine[0]</prop>
@@ -69,10 +52,7 @@
     <volts>115</volts>
     <amps>225</amps>
   </supplier>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>Engine 2</name>
     <prop>/systems/electrical/suppliers/engine[1]</prop>
@@ -81,10 +61,7 @@
     <volts>115</volts>
     <amps>225</amps>
   </supplier>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>Engine 3</name>
     <prop>/systems/electrical/suppliers/engine[2]</prop>
@@ -93,10 +70,7 @@
     <volts>115</volts>
     <amps>225</amps>
   </supplier>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>Engine 4</name>
     <prop>/systems/electrical/suppliers/engine[3]</prop>
@@ -105,10 +79,7 @@
     <volts>115</volts>
     <amps>225</amps>
   </supplier>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <supplier>
     <name>Hydraulic green</name>
     <prop>/systems/electrical/suppliers/emergency[0]</prop>
@@ -117,170 +88,98 @@
     <volts>115</volts>
     <amps>225</amps>
   </supplier>
-<<<<<<< HEAD
 
   <supplier>
     <name>Ground Supply</name>
     <prop>/systems/electrical/suppliers/external[0]</prop>
 <!-- <kind>external</kind> -->
     <kind>alternator</kind> <!-- external is 0 amps -->
-=======
-  <supplier>
-    <name>Ground Supply</name>
-    <prop>/systems/electrical/suppliers/external[0]</prop>
-    <!-- <kind>external</kind> -->
-    <kind>alternator</kind>
-    <!-- external is 0 amps -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     <rpm-source>/systems/electrical/ground-service/volts</rpm-source>
     <volts>115</volts>
     <amps>225</amps>
   </supplier>
-<<<<<<< HEAD
 
 
   <!-- ============ -->
   <!-- Transformers -->
   <!-- ============ -->
 
-=======
-  <!-- ============ -->
-  <!-- Transformers -->
-  <!-- ============ -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>Transformer 6X 14X</name>
     <prop>/systems/electrical/transformers/ac-essential-a</prop>
     <volts>
-<<<<<<< HEAD
      <primary>115</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>115</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>Transformer 7X 15X</name>
     <prop>/systems/electrical/transformers/ac-essential-b</prop>
     <volts>
-<<<<<<< HEAD
      <primary>115</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>115</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>TRU 1</name>
     <prop>/systems/electrical/transformers/dc-tru[0]</prop>
     <volts>
-<<<<<<< HEAD
      <primary>115</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>115</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>TRU 2</name>
     <prop>/systems/electrical/transformers/dc-tru[1]</prop>
     <volts>
-<<<<<<< HEAD
      <primary>115</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>115</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>TRU 3</name>
     <prop>/systems/electrical/transformers/dc-tru[2]</prop>
     <volts>
-<<<<<<< HEAD
      <primary>115</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>115</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>TRU 4</name>
     <prop>/systems/electrical/transformers/dc-tru[3]</prop>
     <volts>
-<<<<<<< HEAD
      <primary>115</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>115</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>Inverter Standby</name>
     <prop>/systems/electrical/transformers/standby</prop>
     <volts>
-<<<<<<< HEAD
      <primary>26</primary>
      <secondary>115</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>26</primary>
-      <secondary>115</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>Inverter Green</name>
     <prop>/systems/electrical/transformers/ac-inverter-green</prop>
     <volts>
-<<<<<<< HEAD
      <primary>26</primary>
      <secondary>26</secondary>
     </volts>
   </transformer>
 
-=======
-      <primary>26</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <transformer>
     <name>Inverter Blue</name>
     <prop>/systems/electrical/transformers/ac-inverter-blue</prop>
     <volts>
-<<<<<<< HEAD
      <primary>26</primary>
      <secondary>26</secondary>
     </volts>
@@ -291,418 +190,260 @@
   <!-- AC Buses -->
   <!-- ======== -->
 
-=======
-      <primary>26</primary>
-      <secondary>26</secondary>
-    </volts>
-  </transformer>
-  <!-- ======== -->
-  <!-- AC Buses -->
-  <!-- ======== -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Ground Service</name>
     <prop>/systems/electrical/outputs/probe/ac-ground-service</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Ground Power Breaker</name>
     <prop>/systems/electrical/outputs/probe/ac-gpb</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Constant Speed Drive 1</name>
     <prop>/systems/electrical/outputs/probe/ac-csd[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Constant Speed Drive 2</name>
     <prop>/systems/electrical/outputs/probe/ac-csd[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Constant Speed Drive 3</name>
     <prop>/systems/electrical/outputs/probe/ac-csd[2]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Constant Speed Drive 4</name>
     <prop>/systems/electrical/outputs/probe/ac-csd[3]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Generator 1</name>
     <prop>/systems/electrical/outputs/probe/ac-generator[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Generator 2</name>
     <prop>/systems/electrical/outputs/probe/ac-generator[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Generator 3</name>
     <prop>/systems/electrical/outputs/probe/ac-generator[2]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Generator 4</name>
     <prop>/systems/electrical/outputs/probe/ac-generator[3]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Generator 5</name>
     <prop>/systems/electrical/outputs/probe/ac-generator[4]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Main 1X</name>
     <prop>/systems/electrical/outputs/probe/ac-main[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Main 2X</name>
     <prop>/systems/electrical/outputs/probe/ac-main[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Main 3X</name>
     <prop>/systems/electrical/outputs/probe/ac-main[2]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Main 4X</name>
     <prop>/systems/electrical/outputs/probe/ac-main[3]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Bus Tie Breaker left</name>
     <prop>/systems/electrical/outputs/probe/btb-left</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Bus Tie Breaker right</name>
     <prop>/systems/electrical/outputs/probe/btb-right</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Split System Breaker</name>
     <prop>/systems/electrical/outputs/probe/ssb</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Essential 5X</name>
     <prop>/systems/electrical/outputs/probe/ac-essential[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Essential 6X</name>
     <prop>/systems/electrical/outputs/probe/ac-essential[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Essential 7X</name>
     <prop>/systems/electrical/outputs/probe/ac-essential[2]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Essential 8X</name>
     <prop>/systems/electrical/outputs/probe/ac-essential[3]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Ground Power 9X</name>
     <prop>/systems/electrical/outputs/probe/ac-ground-power</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Avionics 10X</name>
     <prop>/systems/electrical/outputs/avionics-a</prop>
     <prop>/systems/electrical/outputs/autopilot[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Avionics 11X</name>
     <prop>/systems/electrical/outputs/avionics-b</prop>
     <prop>/systems/electrical/outputs/autopilot[2]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC 26 V Main 12X</name>
     <prop>/systems/electrical/outputs/main-26a</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC 26 V Main 13X</name>
     <prop>/systems/electrical/outputs/main-26b</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC 26 V Essential 14X</name>
     <prop>/systems/electrical/outputs/essential-26a</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC 26 V Essential 15X</name>
     <prop>/systems/electrical/outputs/essential-26b</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Emergency 16X</name>
     <prop>/systems/electrical/outputs/probe/ac-emergency-a</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Emergency 17X</name>
     <prop>/systems/electrical/outputs/probe/ac-emergency-b</prop>
   </bus>
-<<<<<<< HEAD
   
   <!-- Flight controls busbars -->
 
-=======
-  <!-- Flight controls busbars -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Flight Control Monitoring</name>
     <prop>/systems/electrical/outputs/probe/ac-flight-control-monitoring</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Green 22X</name>
     <prop>/systems/electrical/outputs/probe/ac-flight-green</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Blue 23X</name>
     <prop>/systems/electrical/outputs/probe/ac-flight-blue</prop>
   </bus>
-<<<<<<< HEAD
 
   <!-- Relight engines 1, 2, 3 and 4 -->
 
-=======
-  <!-- Relight engines 1, 2, 3 and 4 -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Relight 24X</name>
     <prop>/systems/electrical/outputs/probe/ac-relight[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Relight 25X</name>
     <prop>/systems/electrical/outputs/probe/ac-relight[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Relight 26X</name>
     <prop>/systems/electrical/outputs/probe/ac-relight[2]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Relight 27X</name>
     <prop>/systems/electrical/outputs/probe/ac-relight[3]</prop>
   </bus>
-<<<<<<< HEAD
 
   <!-- ground services -->
 
-=======
-  <!-- ground services -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Ground / Flight 28X</name>
     <prop>/systems/electrical/outputs/probe/ac-ground-flight[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Ground / Flight 29X</name>
     <prop>/systems/electrical/outputs/probe/ac-ground-flight[1]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Ground 30X</name>
     <prop>/systems/electrical/outputs/probe/ac-ground[0]</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Ground 31X</name>
     <prop>/systems/electrical/outputs/probe/ac-ground[1]</prop>
   </bus>
-<<<<<<< HEAD
 
   <!-- standby instruments -->
 
-=======
-  <!-- standby instruments -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Standby 32X</name>
     <prop>/systems/electrical/outputs/standby-radio-alt</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>AC Standby 33X</name>
     <prop>/systems/electrical/outputs/standby-alt</prop>
     <prop>/systems/electrical/outputs/standby-asi</prop>
   </bus>
-<<<<<<< HEAD
 
   <!-- ======== -->
   <!-- DC Buses -->
   <!-- ======== -->
 
-=======
-  <!-- ======== -->
-  <!-- DC Buses -->
-  <!-- ======== -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>DC Main 1P</name>
     <prop>/systems/electrical/outputs/probe/dc-main-a</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>DC Main 2P</name>
     <prop>/systems/electrical/outputs/probe/dc-main-b</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>DC Essential 3P</name>
     <prop>/systems/electrical/outputs/probe/dc-essential-a</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>DC Essential 4P</name>
     <prop>/systems/electrical/outputs/probe/dc-essential-b</prop>
   </bus>
-<<<<<<< HEAD
 
   <!-- ====================== -->
   <!-- Outputs bus (not real) -->
@@ -711,13 +452,6 @@
   <bus>
     <!-- required by flightgear -->
 
-=======
-  <!-- ====================== -->
-  <!-- Outputs bus (not real) -->
-  <!-- ====================== -->
-  <bus>
-    <!-- required by flightgear -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     <name>Instrument bus</name>
     <!-- AC -->
     <prop>/systems/electrical/outputs/bus[0]</prop>
@@ -729,12 +463,7 @@
     <prop>/systems/electrical/outputs/adf</prop>
     <prop>/systems/electrical/outputs/audio-panel[0]</prop>
     <prop>/systems/electrical/outputs/audio-panel[1]</prop>
-<<<<<<< HEAD
     <prop>/systems/electrical/outputs/autopilot[0]</prop>                <!-- reserved for FG -->
-=======
-    <prop>/systems/electrical/outputs/autopilot[0]</prop>
-    <!-- reserved for FG -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     <prop>/systems/electrical/outputs/avionics-fan</prop>
     <prop>/systems/electrical/outputs/dme</prop>
     <prop>/systems/electrical/outputs/gps-mfd</prop>
@@ -746,146 +475,92 @@
     <prop>/systems/electrical/outputs/strobe-lights</prop>
     <prop>/systems/electrical/outputs/taxi-lights</prop>
     <prop>/systems/electrical/outputs/transponder</prop>
-<<<<<<< HEAD
 
     <!-- specific to Concorde -->
 
     <prop>/systems/electrical/outputs/specific</prop>
   </bus>
 
-=======
-    <!-- specific to Concorde -->
-    <prop>/systems/electrical/outputs/specific</prop>
-  </bus>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Light bus</name>
     <!-- DC -->
     <prop>/systems/electrical/outputs/bulb</prop>
   </bus>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <bus>
     <name>Standby bus</name>
     <!-- standby -->
     <prop>/systems/electrical/outputs/standby</prop>
   </bus>
-<<<<<<< HEAD
 
   <!-- =============== -->
   <!-- Generic Outputs -->
   <!-- =============== -->
 
-=======
-  <!-- =============== -->
-  <!-- Generic Outputs -->
-  <!-- =============== -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Starter 1 Power</name>
     <prop>/systems/electrical/outputs/starter[0]</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Cabin Lights Power</name>
     <prop>/systems/electrical/outputs/cabin-lights</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Instrument Power</name>
     <prop>/systems/electrical/outputs/instr-ignition-switch</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Fuel Pump Power</name>
     <prop>/systems/electrical/outputs/fuel-pump</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Landing Light Power</name>
     <prop>/systems/electrical/outputs/landing-light</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Beacon Power</name>
     <prop>/systems/electrical/outputs/beacon</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Flaps Power</name>
     <prop>/systems/electrical/outputs/flaps</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Turn Coordinator Power</name>
     <prop>/systems/electrical/outputs/turn-coordinator</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Map Lights Power</name>
     <prop>/systems/electrical/outputs/map-lights</prop>
   </output>
-<<<<<<< HEAD
 
   <output>
     <name>Instrument Lights Power</name>
     <prop>/systems/electrical/outputs/instrument-lights</prop>              <!-- FG reddish light -->
   </output>
 
-=======
-  <output>
-    <name>Instrument Lights Power</name>
-    <prop>/systems/electrical/outputs/instrument-lights</prop>
-    <!-- FG reddish light -->
-  </output>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Strobe Lights Power</name>
     <prop>/systems/electrical/outputs/strobe-lights</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Taxi Lights Power</name>
     <prop>/systems/electrical/outputs/taxi-lights</prop>
   </output>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <output>
     <name>Pitot Heat Power</name>
     <prop>/systems/electrical/outputs/pitot-heat</prop>
   </output>
-<<<<<<< HEAD
 
   <!-- ================ -->
   <!-- Specific Outputs -->
@@ -897,15 +572,6 @@
 
   <!-- Ground Service disconnected -->
 
-=======
-  <!-- ================ -->
-  <!-- Specific Outputs -->
-  <!-- ================ -->
-  <!-- ======================== -->
-  <!-- connect in power sources -->
-  <!-- ======================== -->
-  <!-- Ground Service disconnected -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Supply</input>
     <output>Ground Service</output>
@@ -913,53 +579,34 @@
       <prop>/controls/electric/ac/ground</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Service</input>
     <output>AC Ground Power 9X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Service</input>
     <output>AC Ground / Flight 28X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Service</input>
     <output>AC Ground / Flight 29X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Service</input>
     <output>AC Ground 30X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Service</input>
     <output>AC Ground 31X</output>
   </connector>
-<<<<<<< HEAD
 
   <!-- Ground Power disconnected -->
 
-=======
-  <!-- Ground Power disconnected -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Supply</input>
     <output>Ground Power Breaker</output>
@@ -967,21 +614,14 @@
       <prop>/controls/electric/ac/gpb</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Ground Power Breaker</input>
     <output>Split System Breaker</output>
   </connector>
-<<<<<<< HEAD
 
   <!-- CSD connected to engine --> 
 
-=======
-  <!-- CSD connected to engine -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Engine 1</input>
     <output>Constant Speed Drive 1</output>
@@ -989,10 +629,7 @@
       <prop>/controls/engines/engine[0]/csd</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Engine 2</input>
     <output>Constant Speed Drive 2</output>
@@ -1000,10 +637,7 @@
       <prop>/controls/engines/engine[1]/csd</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Engine 3</input>
     <output>Constant Speed Drive 3</output>
@@ -1011,10 +645,7 @@
       <prop>/controls/engines/engine[2]/csd</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Engine 4</input>
     <output>Constant Speed Drive 4</output>
@@ -1022,13 +653,9 @@
       <prop>/controls/engines/engine[3]/csd</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- generator connected to CSD --> 
 
-=======
-  <!-- generator connected to CSD -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Constant Speed Drive 1</input>
     <output>Generator 1</output>
@@ -1036,10 +663,7 @@
       <prop>/controls/engines/engine[0]/master-alt</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Constant Speed Drive 2</input>
     <output>Generator 2</output>
@@ -1047,10 +671,7 @@
       <prop>/controls/engines/engine[1]/master-alt</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Constant Speed Drive 3</input>
     <output>Generator 3</output>
@@ -1058,10 +679,7 @@
       <prop>/controls/engines/engine[2]/master-alt</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Constant Speed Drive 4</input>
     <output>Generator 4</output>
@@ -1069,13 +687,9 @@
       <prop>/controls/engines/engine[3]/master-alt</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- GCB connects generator to main bus -->
 
-=======
-  <!-- GCB connects generator to main bus -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Generator 1</input>
     <output>AC Main 1X</output>
@@ -1083,10 +697,7 @@
       <prop>/controls/electric/ac/generator[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Generator 2</input>
     <output>AC Main 2X</output>
@@ -1094,10 +705,7 @@
       <prop>/controls/electric/ac/generator[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Generator 3</input>
     <output>AC Main 3X</output>
@@ -1105,10 +713,7 @@
       <prop>/controls/electric/ac/generator[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Generator 4</input>
     <output>AC Main 4X</output>
@@ -1116,13 +721,9 @@
       <prop>/controls/electric/ac/generator[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Emergency disabled -->
 
-=======
-  <!-- Emergency disabled -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Hydraulic green</input>
     <output>Generator 5</output>
@@ -1130,10 +731,7 @@
       <prop>/controls/electric/ac/emergency/generator/arm</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Generator 5</input>
     <output>AC Emergency 16X</output>
@@ -1141,13 +739,9 @@
       <prop>/controls/electric/ac/emergency/generator/selected</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Batteries connected to Essential -->
 
-=======
-  <!-- Batteries connected to Essential -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Battery A 5P</input>
     <output>DC Essential 3P</output>
@@ -1155,10 +749,7 @@
       <prop>/controls/electric/dc/master-bat[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Battery B 6P</input>
     <output>DC Essential 4P</output>
@@ -1166,7 +757,6 @@
       <prop>/controls/electric/dc/master-bat[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- ================ -->
   <!-- connect AC buses -->
@@ -1174,12 +764,6 @@
 
   <!-- BTB makes parallel 2 generators -->
 
-=======
-  <!-- ================ -->
-  <!-- connect AC buses -->
-  <!-- ================ -->
-  <!-- BTB makes parallel 2 generators -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 1X</input>
     <output>Bus Tie Breaker left</output>
@@ -1187,10 +771,7 @@
       <prop>/controls/electric/ac/btb[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Bus Tie Breaker left</input>
     <output>AC Main 1X</output>
@@ -1198,10 +779,7 @@
       <prop>/controls/electric/ac/btb[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 2X</input>
     <output>Bus Tie Breaker left</output>
@@ -1209,10 +787,7 @@
       <prop>/controls/electric/ac/btb[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Bus Tie Breaker left</input>
     <output>AC Main 2X</output>
@@ -1220,10 +795,7 @@
       <prop>/controls/electric/ac/btb[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 3X</input>
     <output>Bus Tie Breaker right</output>
@@ -1231,10 +803,7 @@
       <prop>/controls/electric/ac/btb[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Bus Tie Breaker right</input>
     <output>AC Main 3X</output>
@@ -1242,10 +811,7 @@
       <prop>/controls/electric/ac/btb[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 4X</input>
     <output>Bus Tie Breaker right</output>
@@ -1253,10 +819,7 @@
       <prop>/controls/electric/ac/btb[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Bus Tie Breaker right</input>
     <output>AC Main 4X</output>
@@ -1264,13 +827,9 @@
       <prop>/controls/electric/ac/btb[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- SSB makes parallel 4 generators -->
 
-=======
-  <!-- SSB makes parallel 4 generators -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Bus Tie Breaker left</input>
     <output>Split System Breaker</output>
@@ -1278,10 +837,7 @@
       <prop>/controls/electric/ac/ssb</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Split System Breaker</input>
     <output>Bus Tie Breaker left</output>
@@ -1289,10 +845,7 @@
       <prop>/controls/electric/ac/ssb</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Bus Tie Breaker right</input>
     <output>Split System Breaker</output>
@@ -1300,10 +853,7 @@
       <prop>/controls/electric/ac/ssb</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Split System Breaker</input>
     <output>Bus Tie Breaker right</output>
@@ -1311,13 +861,9 @@
       <prop>/controls/electric/ac/ssb</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Essential connected to Main -->
 
-=======
-  <!-- Essential connected to Main -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 1X</input>
     <output>AC Essential 5X</output>
@@ -1325,10 +871,7 @@
       <prop>/controls/electric/ac/essential[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 2X</input>
     <output>AC Essential 6X</output>
@@ -1336,10 +879,7 @@
       <prop>/controls/electric/ac/essential[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 3X</input>
     <output>AC Essential 7X</output>
@@ -1347,10 +887,7 @@
       <prop>/controls/electric/ac/essential[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 4X</input>
     <output>AC Essential 8X</output>
@@ -1358,13 +895,9 @@
       <prop>/controls/electric/ac/essential[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Avionics to Main, except load shed -->
 
-=======
-  <!-- Avionics to Main, except load shed -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 2X</input>
     <output>AC Avionics 10X</output>
@@ -1372,10 +905,7 @@
       <prop>/controls/electric/ac/essential[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 3X</input>
     <output>AC Avionics 11X</output>
@@ -1383,29 +913,19 @@
       <prop>/controls/electric/ac/essential[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- 26 volts Main to Essential (via transformer), except load shed -->
 
-=======
-  <!-- 26 volts Main to Essential (via transformer), except load shed -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 6X</input>
     <output>Transformer 6X 14X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Transformer 6X 14X</input>
     <output>AC 26 V Essential 14X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC 26 V Essential 14X</input>
     <output>AC 26 V Main 12X</output>
@@ -1413,26 +933,17 @@
       <prop>/controls/electric/ac/essential[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 7X</input>
     <output>Transformer 7X 15X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Transformer 7X 15X</input>
     <output>AC 26 V Essential 15X</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC 26 V Essential 15X</input>
     <output>AC 26 V Main 13X</output>
@@ -1440,13 +951,9 @@
       <prop>/controls/electric/ac/essential[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Emergency disconnected (manual) -->
 
-=======
-  <!-- Emergency disconnected (manual) -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Essential 5X</output>
@@ -1454,10 +961,7 @@
       <prop>/controls/electric/ac/emergency/essential[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Essential 6X</output>
@@ -1465,10 +969,7 @@
       <prop>/controls/electric/ac/emergency/essential[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 17X</input>
     <output>AC Essential 7X</output>
@@ -1476,10 +977,7 @@
       <prop>/controls/electric/ac/emergency/essential[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 17X</input>
     <output>AC Essential 8X</output>
@@ -1487,13 +985,9 @@
       <prop>/controls/electric/ac/emergency/essential[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Emergency disconnected (automatic) -->
 
-=======
-  <!-- Emergency disconnected (automatic) -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Essential 5X</output>
@@ -1501,10 +995,7 @@
       <prop>/controls/electric/ac/emergency/essential-auto[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Essential 6X</output>
@@ -1512,10 +1003,7 @@
       <prop>/controls/electric/ac/emergency/essential-auto[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 17X</input>
     <output>AC Essential 7X</output>
@@ -1523,10 +1011,7 @@
       <prop>/controls/electric/ac/emergency/essential-auto[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 17X</input>
     <output>AC Essential 8X</output>
@@ -1534,13 +1019,9 @@
       <prop>/controls/electric/ac/emergency/essential-auto[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Auto Shed Breaker closed -->
 
-=======
-  <!-- Auto Shed Breaker closed -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Emergency 17X</output>
@@ -1548,13 +1029,9 @@
       <prop>/controls/electric/ac/emergency/asb</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Relight connected to Main -->
 
-=======
-  <!-- Relight connected to Main -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 1X</input>
     <output>AC Relight 24X</output>
@@ -1562,10 +1039,7 @@
       <prop>/controls/electric/ac/relight[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 2X</input>
     <output>AC Relight 25X</output>
@@ -1573,10 +1047,7 @@
       <prop>/controls/electric/ac/relight[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 3X</input>
     <output>AC Relight 26X</output>
@@ -1584,10 +1055,7 @@
       <prop>/controls/electric/ac/relight[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 4X</input>
     <output>AC Relight 27X</output>
@@ -1595,13 +1063,9 @@
       <prop>/controls/electric/ac/relight[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Relight disconnected from Emergency -->
 
-=======
-  <!-- Relight disconnected from Emergency -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Relight 24X</output>
@@ -1609,10 +1073,7 @@
       <prop>/controls/electric/ac/emergency/relight[0]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Relight 25X</output>
@@ -1620,10 +1081,7 @@
       <prop>/controls/electric/ac/emergency/relight[1]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Relight 26X</output>
@@ -1631,10 +1089,7 @@
       <prop>/controls/electric/ac/emergency/relight[2]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Emergency 16X</input>
     <output>AC Relight 27X</output>
@@ -1642,13 +1097,9 @@
       <prop>/controls/electric/ac/emergency/relight[3]</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- Standby connected to Essential -->
 
-=======
-  <!-- Standby connected to Essential -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 5X</input>
     <output>AC Standby 32X</output>
@@ -1656,10 +1107,7 @@
       <prop>/controls/electric/ac/standby</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 5X</input>
     <output>AC Standby 33X</output>
@@ -1667,21 +1115,14 @@
       <prop>/controls/electric/ac/standby</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
  <!-- Standby disconnected from DC (via inverter), until RAT is deployed -->
 
-=======
-  <!-- Standby disconnected from DC (via inverter), until RAT is deployed -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Essential 3P</input>
     <output>Inverter Standby</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Inverter Standby</input>
     <output>AC Standby 32X</output>
@@ -1689,10 +1130,7 @@
       <prop>/controls/electric/ac/emergency/standby</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Inverter Standby</input>
     <output>AC Standby 33X</output>
@@ -1700,7 +1138,6 @@
       <prop>/controls/electric/ac/emergency/standby</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- ================ -->
   <!-- connect DC buses -->
@@ -1708,20 +1145,11 @@
 
   <!-- DC to AC, via TRU -->
 
-=======
-  <!-- ================ -->
-  <!-- connect DC buses -->
-  <!-- ================ -->
-  <!-- DC to AC, via TRU -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 5X</input>
     <output>TRU 1</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>TRU 1</input>
     <output>DC Essential 3P</output>
@@ -1729,18 +1157,12 @@
       <prop>/controls/electric/dc/essential-a</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 2X</input>
     <output>TRU 2</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>TRU 2</input>
     <output>DC Main 1P</output>
@@ -1748,18 +1170,12 @@
       <prop>/controls/electric/dc/main-a</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Main 3X</input>
     <output>TRU 3</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>TRU 3</input>
     <output>DC Main 2P</output>
@@ -1767,18 +1183,12 @@
       <prop>/controls/electric/dc/main-b</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 8X</input>
     <output>TRU 4</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>TRU 4</input>
     <output>DC Essential 4P</output>
@@ -1786,32 +1196,21 @@
       <prop>/controls/electric/dc/essential-b</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- the 2 Main connected by fuses -->
 
-=======
-  <!-- the 2 Main connected by fuses -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Main 1P</input>
     <output>DC Main 2P</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Main 2P</input>
     <output>DC Main 1P</output>
   </connector>
-<<<<<<< HEAD
 
   <!-- Essential / Main Split -->
 
-=======
-  <!-- Essential / Main Split -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Main 1P</input>
     <output>DC Essential 3P</output>
@@ -1819,10 +1218,7 @@
       <prop>/controls/electric/dc/ems-a</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Main 2P</input>
     <output>DC Essential 4P</output>
@@ -1830,13 +1226,9 @@
       <prop>/controls/electric/dc/ems-b</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
  <!-- Flight controls (via inverter) -->
 
-=======
-  <!-- Flight controls (via inverter) -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Essential 3P</input>
     <output>Inverter Green</output>
@@ -1844,18 +1236,12 @@
       <prop>/controls/electric/dc/inverter-green</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Inverter Green</input>
     <output>AC Flight Control Monitoring</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Inverter Green</input>
     <output>AC Green 22X</output>
@@ -1863,10 +1249,7 @@
       <prop>/controls/electric/ac/inverter-green</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Essential 4P</input>
     <output>Inverter Blue</output>
@@ -1874,18 +1257,12 @@
       <prop>/controls/electric/dc/inverter-blue</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Inverter Blue</input>
     <output>AC Flight Control Monitoring</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Inverter Blue</input>
     <output>AC Blue 23X</output>
@@ -1893,87 +1270,56 @@
       <prop>/controls/electric/ac/inverter-blue</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
 
   <!-- ============================================ -->
   <!-- finally feeds the instruments and the lights -->
   <!-- ============================================ -->
 
-=======
-  <!-- ============================================ -->
-  <!-- finally feeds the instruments and the lights -->
-  <!-- ============================================ -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 5X</input>
     <output>Instrument bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 6X</input>
     <output>Instrument bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 7X</input>
     <output>Instrument bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Essential 8X</input>
     <output>Instrument bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Main 1P</input>
     <output>Light bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Main 2P</input>
     <output>Light bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Essential 3P</input>
     <output>Light bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>DC Essential 4P</input>
     <output>Light bus</output>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>AC Standby 32X</input>
     <output>Standby bus</output>
   </connector>
-<<<<<<< HEAD
 
   <!-- =============== -->
   <!-- connect outputs -->
@@ -1981,12 +1327,6 @@
 
   <!-- connect starter output -->
 
-=======
-  <!-- =============== -->
-  <!-- connect outputs -->
-  <!-- =============== -->
-  <!-- connect starter output -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Starter 1 Power</output>
@@ -1994,13 +1334,9 @@
       <prop>/controls/engines/engine[0]/starter</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
   <!-- connect master bus outputs -->
 
-=======
-  <!-- connect master bus outputs -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Cabin Lights Power</output>
@@ -2008,10 +1344,7 @@
       <prop>/controls/circuit-breakers/cabin-lights-pwr</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Instrument Power</output>
@@ -2019,10 +1352,7 @@
       <prop>/controls/circuit-breakers/instr-ignition-switch</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Fuel Pump Power</output>
@@ -2030,10 +1360,7 @@
       <prop>/controls/engines/engine[0]/fuel-pump</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Landing Light Power</output>
@@ -2041,10 +1368,7 @@
       <prop>/controls/switches/landing-light</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Beacon Power</output>
@@ -2052,10 +1376,7 @@
       <prop>/controls/switches/flashing-beacon</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Flaps Power</output>
@@ -2063,10 +1384,7 @@
       <prop>/controls/circuit-breakers/flaps</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Turn Coordinator Power</output>
@@ -2074,10 +1392,7 @@
       <prop>/controls/circuit-breakers/turn-coordinator</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Map Lights Power</output>
@@ -2085,25 +1400,15 @@
       <prop>/controls/switches/nav-lights</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Instrument Lights Power</output>
     <switch>
-<<<<<<< HEAD
       <prop>/controls/lighting/instrument-lights</prop>              <!-- FG reddish light -->
     </switch>
   </connector>
 
-=======
-      <prop>/controls/lighting/instrument-lights</prop>
-      <!-- FG reddish light -->
-    </switch>
-  </connector>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Strobe Lights Power</output>
@@ -2111,10 +1416,7 @@
       <prop>/controls/switches/strobe-lights</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Taxi Lights Power</output>
@@ -2122,10 +1424,7 @@
       <prop>/controls/switches/taxi-lights</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <connector>
     <input>Instrument bus</input>
     <output>Pitot Heat Power</output>
@@ -2133,8 +1432,5 @@
       <prop>/controls/switches/pitot-heat</prop>
     </switch>
   </connector>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 </PropertyList>

@@ -68,10 +68,7 @@
 
     Known problems  :
     ==============
-<<<<<<< HEAD
     - transparent outer flame not visible with Rembrandt.
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     - when retracted, front gear torque is inside closed door (could be solved by releasing the torque).
     - wow doesn't reset, when one starts in flight (filtered above 50 ft AGL).
     - because of night scaling, wrong transparency ordering of navigation and strobe lights
@@ -100,28 +97,12 @@
     var livery_update = aircraft.livery_update.new(
     "Aircraft/Concorde/Models/Liveries", 10,
     func { print("Concorde livery update") });
-<<<<<<< HEAD
 
     var model = cmdarg();
     model.getNode("door[0]/position-x-m", 1).setValue(-18.1175);
     model.getNode("door[0]/position-y-m", 1).setValue(-1.2947);
     model.getNode("door[0]/position-z-m", 1).setValue(0.2577);
     model.getNode("door[0]/jetway-hood-deg", 1).setValue(0.0);
-=======
-  var model = cmdarg();
-  model.getNode("door[0]/position-x-m", 1).setValue(12.9);
-  model.getNode("door[0]/position-y-m", 1).setValue(-1.4);
-  model.getNode("door[0]/position-z-m", 1).setValue(0.4);
-  model.getNode("door[0]/jetway-hood-deg", 1).setValue(3);
-  model.getNode("door[1]/position-x-m", 1).setValue(27);
-  model.getNode("door[1]/position-y-m", 1).setValue(-1.6);
-  model.getNode("door[1]/position-z-m", 1).setValue(0.55);
-  model.getNode("door[1]/jetway-hood-deg", 1).setValue(3);
-  model.getNode("door[2]/position-x-m", 1).setValue(44.5);
-  model.getNode("door[2]/position-y-m", 1).setValue(-1.6);
-  model.getNode("door[2]/position-z-m", 1).setValue(0.55);
-  model.getNode("door[2]/jetway-hood-deg", 1).setValue(3);
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    </load>
 
    <unload>
@@ -133,7 +114,6 @@
 <!-- ============================ -->
 <!-- Livery (1 texture per group) -->
 <!-- ============================ -->
-<<<<<<< HEAD
   
   <!--Apply grouping removed from .ac model-->
 
@@ -162,12 +142,6 @@
   <animation>
    <type>material</type>
    <object-name>Airframe</object-name>
-=======
-
-  <animation>
-   <type>material</type>
-   <object-name>Hull</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <property-base>sim/model/livery/</property-base>
    <texture-prop>texture</texture-prop>
   </animation>
@@ -178,17 +152,7 @@
    <property-base>sim/model/livery/</property-base>
    <texture-prop>texture</texture-prop>
   </animation>
-<<<<<<< HEAD
 
-=======
-  
-  <!--Apply grouping removed from .ac model-->
-  <animation>
-    <name>Front</name>
-    <object-name>Screen_0</object-name>
-    <object-name>Screen_1</object-name>
-  </animation>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   
 <!-- ================ -->
 <!-- Separated models -->
@@ -205,14 +169,6 @@
   </model>
 
   <model>
-<<<<<<< HEAD
-=======
-   <name>Cockpit</name>
-   <path>Aircraft/Concorde/Models/Concorde_3d_cockpit.xml</path>
-  </model>
-
-  <model>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <name>Exterior</name>
    <path>Aircraft/Concorde/Models/Concorde_exterior.xml</path>
   </model>
@@ -243,31 +199,16 @@
    <object-name>Pillar</object-name>
    <object-name>CeilingEdge</object-name>
    <object-name>Dashboard</object-name>
-<<<<<<< HEAD
    <object-name>AvionicsLRack</object-name>
    <object-name>AvionicsRRack</object-name>
    <object-name>AvionicsRack</object-name>
-=======
-   <object-name>RoofLight1</object-name>
-   <object-name>RoofLight2</object-name>
-   <object-name>AvionicsLRack</object-name>
-   <object-name>AvionicsRRack</object-name>
-   <object-name>AvionicsRack</object-name>
-   <object-name>RoofLight1</object-name>
-   <object-name>RoofLight2</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <object-name>UpperPanel</object-name>
    <object-name>ConsoleLeft</object-name>
    <object-name>ConsoleRight</object-name>
    <object-name>TopConsoleLeft</object-name>
    <object-name>TopConsoleRight</object-name>
-<<<<<<< HEAD
    <object-name>Dash lighting</object-name>
    <object-name>Roof instruments</object-name>
-=======
-   <object-name>CeilingPanel</object-name>
-   <object-name>Dash lighting</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   </animation>
 
   <animation>
@@ -428,11 +369,7 @@
 
   <animation>
    <name>observer</name>
-<<<<<<< HEAD
    <object-name>Observer location</object-name>
-=======
-   <object-name>Observer Seat</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   </animation>
 
   <animation>
@@ -449,38 +386,20 @@
    </condition>
   </animation>
 
-<<<<<<< HEAD
   <animation>
    <type>select</type>
    <object-name>Observer Seat</object-name>
-=======
-<!-- OBSERVER 2 -->
-
-  <animation>
-   <name>observer 2</name>
-   <object-name>Observer 2 Seat</object-name>
-  </animation>
-
-  <animation>
-   <type>select</type>
-   <object-name>observer 2</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <condition>
     <or>
      <and>
       <property>sim/current-view/internal</property>
-<<<<<<< HEAD
       <property>systems/seat/observer</property>
-=======
-      <property>systems/seat/observer2</property>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
      </and>
      <property>controls/seat/all</property>
     </or>
    </condition>
   </animation>
 
-<<<<<<< HEAD
 <!-- OBSERVER 2 -->
 
   <animation>
@@ -493,18 +412,6 @@
       <property>systems/seat/observer2</property>
      </and>
      <property>controls/seat/all</property>
-=======
-<!-- hide side windows in cockpit view -->
-  <animation>
-   <type>select</type>
-   <object-name>Side</object-name>
-   <condition>
-    <or>
-     <not>
-      <property>sim/current-view/internal</property>
-     </not>
-     <property>controls/seat/all-outside</property>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     </or>
    </condition>
   </animation>
@@ -2584,26 +2491,16 @@
 
 <!-- SHADER effects -->
 
-<<<<<<< HEAD
  <effect>
-=======
-  <effect>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <inherits-from>Aircraft/Concorde/Models/Effects/fuselage-reflect</inherits-from>
   <object-name>Screen_0</object-name>
   <object-name>Front_0</object-name>
   <object-name>Hull</object-name>
-<<<<<<< HEAD
   <object-name>Wheel</object-name>
   <object-name>Nose_0</object-name>
   <object-name>Nose_1</object-name>
 <!-- wing -->
   <object-name>Wing</object-name>
-=======
-  <object-name>Wing</object-name>
-  <object-name>Nose_0</object-name>
-  <object-name>Nose_1</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <object-name>Upperrudder</object-name>
   <object-name>Lowerrudder</object-name>
   <object-name>LOailaron</object-name>
@@ -2612,7 +2509,6 @@
   <object-name>ROailaron</object-name>
   <object-name>RMailaron</object-name>
   <object-name>RIailaron</object-name>
-<<<<<<< HEAD
 <!-- engine -->
   <object-name>Engine</object-name>
   <object-name>EngineIntake</object-name>
@@ -2675,30 +2571,12 @@
   <object-name>Tailwheels</object-name>
   <object-name>Tailstrut</object-name>
   <object-name>Tailram</object-name>
-=======
-   <object-name>Engine</object-name>
-  <object-name>EngineIntake</object-name>
-  <object-name>OLImaindoor</object-name>
-  <object-name>OLOmaindoor</object-name>
-  <object-name>ORImaindoor</object-name>
-  <object-name>OROmaindoor</object-name>
-  <object-name>LIdoorclosed</object-name>
-  <object-name>LOdoorclosed</object-name>
-  <object-name>RIdoorclosed</object-name>
-  <object-name>ROdoorclosed</object-name>
-  <object-name>OFLbigdoor</object-name>
-  <object-name>OFlsmalldoor</object-name>
-  <object-name>OFRbigdoor</object-name>
-  <object-name>OFRsmalldoor</object-name>
-  <object-name>Fucdclosed</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <object-name>Taildoorfront</object-name>
   <object-name>Littledoorleft</object-name>
   <object-name>Littledoorright</object-name>
   <object-name>Taildoorclosed</object-name>
  </effect>
 
-<<<<<<< HEAD
  <effect>
    <inherits-from>Aircraft/Concorde/Models/Effects/glass</inherits-from>
    <object-name>Cabin</object-name>
@@ -2718,15 +2596,6 @@
    <object-name>OuterFlame3</object-name>
    <object-name>OuterFlame4</object-name>
  </effect>
-=======
-   <effect>
-	   <inherits-from>Aircraft/Concorde/Models/Effects/glass</inherits-from>
-	   <object-name>Cabin</object-name>
-	   <object-name>Screen_1</object-name>
-	   <object-name>Side</object-name>
-	   <object-name>Front_1</object-name>
-   </effect>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 
 <!-- =================== -->
@@ -2743,10 +2612,6 @@
 
  <animation>
   <type>material</type>
-<<<<<<< HEAD
-=======
-  <object-name>CeilingEdge</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <object-name>Dashboard</object-name>
   <object-name>Rack lighting</object-name>
   <emission>
@@ -2761,40 +2626,9 @@
 
  <animation>
   <type>material</type>
-<<<<<<< HEAD
   <object-name>UpperPanel</object-name>
   <object-name>ConsoleLeft</object-name>
   <object-name>ConsoleRight</object-name>
-=======
-  <object-name>engineer</object-name>
-  <emission>
-   <red>0.66</red>
-   <green>0.68</green>
-   <blue>0.64</blue>
-   <factor-prop>systems/lighting/level/roof</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>observer</object-name>
-  <emission>
-   <red>0.66</red>
-   <green>0.68</green>
-   <blue>0.64</blue>
-   <factor-prop>systems/lighting/level/roof</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>RoofLight1</object-name>
-  <object-name>RoofLight2</object-name>
-  <object-name>UpperPanel</object-name>
-  <object-name>ConsoleLeft</object-name>
-  <object-name>ConsoleRight</object-name>
-  <object-name>CeilingPanel</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <object-name>Dash lighting</object-name>
   <emission>
    <red>0.71</red>
@@ -2803,11 +2637,7 @@
    <factor-prop>systems/lighting/level/roof</factor-prop>
   </emission>
  </animation>
-<<<<<<< HEAD
 
-=======
-<!--
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
  <animation>
   <type>material</type>
   <object-name>Cockpit</object-name>
@@ -2821,19 +2651,11 @@
   </emission>
  </animation>
 
-<<<<<<< HEAD
-=======
- -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <!-- FLOOD LIGHTING (only if no roof light) -->
 
  <animation>
   <type>material</type>
-<<<<<<< HEAD
   <object-name>Panel lighting</object-name>
-=======
-  <object-name>MainPanel</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <emission>
    <red>0.83</red>
    <green>0.74</green>
@@ -2844,13 +2666,8 @@
 
  <animation>
   <type>material</type>
-<<<<<<< HEAD
   <object-name>Console lighting</object-name>
   <object-name>Pedestal lighting</object-name>
-=======
-  <object-name>ConsoleForward</object-name>
-  <object-name>ConsoleAft</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <emission>
    <red>0.83</red>
    <green>0.74</green>

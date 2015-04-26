@@ -166,7 +166,6 @@ Voice.inittable = func( path, table ) {
 }
 
 Voice.inittext = func {
-<<<<<<< HEAD
    me.inittable(me.itself["checklist"].getNode("beforetakeoff/engineer[0]").getPath(), me.engineerbeforetakeoff );
    me.inittable(me.itself["checklist"].getNode("beforetakeoff/captain[0]").getPath(), me.captainbeforetakeoff );
 
@@ -222,63 +221,6 @@ Voice.inittext = func {
    me.inittable(me.itself["checklist"].getNode("all/captain[0]").getPath(), me.captainallways );
 
    me.inittable(me.itself["callout"].getNode("all/pilot[0]").getPath(), me.allways );
-=======
-   me.inittable("/systems/voice/checklists/beforetakeoff/engineer[0]", me.engineerbeforetakeoff );
-   me.inittable("/systems/voice/checklists/beforetakeoff/captain[0]", me.captainbeforetakeoff );
-
-   me.inittable("/systems/voice/callouts/takeoff/captain", me.captaintakeoff );
-
-   me.inittable("/systems/voice/callouts/takeoff/pilot[0]", me.pilottakeoff );
-   me.inittable("/systems/voice/callouts/takeoff/pilot[1]", me.pilotclimb );
-   me.inittable("/systems/voice/callouts/takeoff/pilot[2]", me.allwaystakeoff );
-   me.inittable("/systems/voice/callouts/takeoff/engineer[0]", me.engineertakeoff );
-
-   me.inittable("/systems/voice/checklists/aftertakeoff/engineer[0]", me.engineeraftertakeoff );
-   me.inittable("/systems/voice/checklists/aftertakeoff/captain[0]", me.captainaftertakeoff );
-
-   me.inittable("/systems/voice/callouts/flight/pilot[0]", me.allwaysflight );
-   me.inittable("/systems/voice/callouts/flight/engineer[0]", me.engineerflight );
-
-   me.inittable("/systems/voice/checklists/climb/engineer[0]", me.engineerclimb );
-
-   me.inittable("/systems/voice/checklists/transsonic/engineer[0]", me.engineertranssonic );
-
-   me.inittable("/systems/voice/checklists/descent/engineer[0]", me.engineerdescent );
-
-   me.inittable("/systems/voice/checklists/approach/engineer[0]", me.engineerapproach );
-
-   me.inittable("/systems/voice/checklists/beforelanding/engineer", me.engineerbeforelanding );
-
-   me.inittable("/systems/voice/callouts/landing/pilot[0]", me.pilotlanding );
-   me.inittable("/systems/voice/callouts/landing/pilot[1]", me.allwayslanding );
-   me.inittable("/systems/voice/callouts/landing/engineer[0]", me.engineerlanding );
-
-   me.inittable("/systems/voice/callouts/goaround/pilot[0]", me.pilotgoaround );
-
-   me.inittable("/systems/voice/checklists/afterlanding/engineer[0]", me.engineerafterlanding );
-
-   me.inittable("/systems/voice/checklists/parking/engineer[0]", me.engineerparking );
-
-   me.inittable("/systems/voice/checklists/stopover/engineer[0]", me.engineerstopover );
-
-   me.inittable("/systems/voice/checklists/cockpit/engineer[0]", me.engineercockpit );
-
-   me.inittable("/systems/voice/checklists/beforestart/pilot[0]", me.pilotbeforestart );
-   me.inittable("/systems/voice/checklists/beforestart/engineer[0]", me.engineerbeforestart );
-
-   me.inittable("/systems/voice/checklists/pushback/pilot[0]", me.pilotpushback );
-   me.inittable("/systems/voice/checklists/pushback/engineer[0]", me.engineerpushback );
-
-   me.inittable("/systems/voice/checklists/afterstart/pilot[0]", me.pilotafterstart );
-   me.inittable("/systems/voice/checklists/afterstart/captain[0]", me.captainafterstart );
-
-   me.inittable("/systems/voice/checklists/taxi/engineer[0]", me.engineertaxi );
-   me.inittable("/systems/voice/checklists/taxi/captain[0]", me.captaintaxi );
-
-   me.inittable("/systems/voice/checklists/all/captain[0]", me.captainallways );
-
-   me.inittable("/systems/voice/callouts/all/pilot[0]", me.allways );
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Voice.presetcrew = func {
@@ -1629,22 +1571,14 @@ Voice.flightallways = func {
 
        if( !me.altitudeselect ) { 
            if( me.vertical == "altitude-acquire" ) {
-<<<<<<< HEAD
                if( me.autopilotsystem.is_engaged() and
-=======
-               if( me.autopilotsystem.is_autopilot_engaged() and
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                    !me.autopilotsystem.altitudelight_on( me.altitudeft, me.selectft ) ) {
                    me.altitudeselect = constant.TRUE;
                }
            }
        }
        else { 
-<<<<<<< HEAD
            if( me.autopilotsystem.is_engaged() and
-=======
-           if( me.autopilotsystem.is_autopilot_engaged() and
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                me.autopilotsystem.altitudelight_on( me.altitudeft, me.selectft ) ) {
                if( me.crewvoice.stepallways( "1000fttogo", me.allwaysflight ) ) {
                    me.altitudeselect = constant.FALSE;
@@ -1681,15 +1615,9 @@ Voice.flightallways = func {
        elsif( me.fueltransfert and
               !me.dependency["engineer"].getNode("cg/forward").getValue() and
               !me.dependency["engineer"].getNode("cg/aft").getValue() ) {
-<<<<<<< HEAD
            if( ( me.autopilotsystem.is_engaged() and
                ( me.autopilotsystem.is_altitude_acquire() or
                  me.autopilotsystem.is_altitude_hold() ) ) or
-=======
-           if( ( me.autopilotsystem.is_autopilot_engaged() and
-               ( me.autopilotsystem.is_altitude_acquire or
-                 me.autopilotsystem.is_holding_altitude ) ) or
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                me.is_cruising() or me.is_approaching() ) {
                me.fueltransfert = constant.FALSE;
                me.crewvoice.stepengineer( "cgcorrect", me.engineerflight );
@@ -1838,11 +1766,7 @@ Voice.landing = func {
 Voice.landingpilot = func {
    if( me.automata2 == "landing" ) {
        if( me.dependency["nav"].getChild("in-range").getValue() ) {
-<<<<<<< HEAD
            if( me.autopilotsystem.is_engaged() and
-=======
-           if( me.autopilotsystem.is_autopilot_engaged() and
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                me.dependency["autoflight"].getChild("heading").getValue() == "nav1-hold" ) {
                me.automata2 = me.pilotcall( "beambar" );
            }
@@ -1851,11 +1775,7 @@ Voice.landingpilot = func {
    elsif( me.automata2 == "beambar" ) {
        if( me.dependency["nav"].getChild("in-range").getValue() and
            me.dependency["nav"].getChild("has-gs").getValue() ) {
-<<<<<<< HEAD
            if( me.autopilotsystem.is_engaged() and
-=======
-           if( me.autopilotsystem.is_autopilot_engaged() and
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                me.dependency["autoflight"].getChild("altitude").getValue() == "gs1-hold" ) {
                me.automata2 = me.pilotcall( "glideslope" );
            }

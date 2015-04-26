@@ -47,7 +47,6 @@
  <animation>
   <type>rotate</type>
   <object-name>YokePillar</object-name>
-<<<<<<< HEAD
   <property>controls/flight/elevator-trim</property>
   <factor>-5</factor>
   <offset-deg>-10</offset-deg>
@@ -69,11 +68,6 @@
   <property>controls/flight/elevator</property>
   <factor>-5</factor>
   <offset-deg>0</offset-deg>
-=======
-  <property>controls/flight/elevator</property>
-  <factor>-5</factor>
-  <offset-deg>-10</offset-deg>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <center>
    <x-m>0.0</x-m>
    <y-m>0.0</y-m>
@@ -89,7 +83,6 @@
  <animation>
   <type>rotate</type>
   <object-name>Yoke</object-name>
-<<<<<<< HEAD
   <property>controls/flight/aileron-trim</property>
   <factor>-45</factor>
   <offset-deg>0</offset-deg>   
@@ -108,8 +101,6 @@
  <animation>
   <type>rotate</type>
   <object-name>Yoke</object-name>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <property>controls/flight/aileron</property>
   <factor>-45</factor>
   <offset-deg>0</offset-deg>   

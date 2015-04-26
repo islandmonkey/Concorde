@@ -4,7 +4,6 @@
   <path>brake-cylinder.ac</path> 
 
   <animation>
-<<<<<<< HEAD
    <name>Brake</name>
    <object-name>BrakeCylinder</object-name>
    <object-name>BrakeLever</object-name>
@@ -13,10 +12,6 @@
   <animation>
    <type>material</type>
    <object-name>Brake</object-name>
-=======
-   <type>material</type>
-   <object-name>BrakeCylinder</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <emission>
     <red>0.71</red>
     <green>0.79</green>

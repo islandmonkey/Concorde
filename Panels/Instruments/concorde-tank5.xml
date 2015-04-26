@@ -39,11 +39,7 @@
     <name>1</name>
     <condition>
      <equals>
-<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
-=======
-      <property alias="../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>1</value>
      </equals>
     </condition>
@@ -62,11 +58,7 @@
     <name>2</name>
     <condition>
      <equals>
-<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
-=======
-      <property alias="../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>2</value>
      </equals>
     </condition>
@@ -85,11 +77,7 @@
     <name>3</name>
     <condition>
      <equals>
-<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
-=======
-      <property alias="../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>3</value>
      </equals>
     </condition>
@@ -108,11 +96,7 @@
     <name>4</name>
     <condition>
      <equals>
-<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
-=======
-      <property alias="../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>4</value>
      </equals>
     </condition>
@@ -131,11 +115,7 @@
     <name>5A</name>
     <condition>
      <equals>
-<<<<<<< HEAD
       <property alias="../../../../../../params/name"/>
-=======
-      <property alias="../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
       <value>5A</value>
      </equals>
     </condition>

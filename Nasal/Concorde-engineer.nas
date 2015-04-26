@@ -18,10 +18,7 @@ Virtualengineer.new = func {
    var obj = { parents : [Virtualengineer,CommonCheck,Virtualcrew,Checklist,Emergency,System], 
 
                airbleedsystem : nil,
-<<<<<<< HEAD
                autopilotsystem : nil,
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                electricalsystem : nil,
                enginesystem : nil,
                fuelsystem : nil,
@@ -124,13 +121,10 @@ Virtualengineer.toggleexport = func {
     }
 }
 
-<<<<<<< HEAD
 Virtualengineer.radioexport = func( arrival ) {
     me.radiomanagement.radioexport( arrival );
 }
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 Virtualengineer.reheatexport = func {
     # at first engine 2 3.
     if( !me.has_reheat() ) {
@@ -864,11 +858,7 @@ Virtualengineer.enginerating = func( rating ) {
         for( var i=0; i<constantaero.NBENGINES; i=i+1 ) {
              ratingnow = me.dependency["engine-ctrl"][i].getChild("rating").getValue();
              if( ratingnow != rating and rating == constantaero.RATINGFLIGHT ) {
-<<<<<<< HEAD
                  if( !me.dependency["gear-ctrl"].getChild("gear-down").getValue() ) {
-=======
-                 if( !getprop("/controls/gear/gear-down") ) {
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                      me.dependency["engine-ctrl"][i].getChild("rating").setValue(rating);
                      me.toggleclick("rating-" ~ i ~ "-" ~ rating);
                      break;
@@ -1124,10 +1114,6 @@ Virtualengineer.wingantiicing = func( set ) {
         if( me.dependency["anti-icing"].getNode(path).getValue() != set ) {
             me.dependency["anti-icing"].getNode(path).setValue( set );
             me.toggleclick("icing-main-" ~ i);
-<<<<<<< HEAD
-=======
-            return;
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         }
     }
 
@@ -1137,10 +1123,6 @@ Virtualengineer.wingantiicing = func( set ) {
         if( me.dependency["anti-icing"].getNode(path).getValue() != set ) {
             me.dependency["anti-icing"].getNode(path).setValue( set );
             me.toggleclick("icing-alt-" ~ i);
-<<<<<<< HEAD
-=======
-            return;
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         }
     }
 }
@@ -1716,13 +1698,8 @@ Navigation.schedule = func {
 
         # last
         else {
-<<<<<<< HEAD
             id = me.dependency["route-manager"].getNode("wp-last/id",constant.DELAYEDNODE).getValue(); 
             distnm = me.dependency["route-manager"].getNode("wp-last/dist",constant.DELAYEDNODE).getValue(); 
-=======
-            id = getprop("/autopilot/route-manager/wp-last/id"); 
-            distnm = getprop("/autopilot/route-manager/wp-last/dist"); 
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         }
 
         fuelkg = me.estimatefuelkg( id, distnm );

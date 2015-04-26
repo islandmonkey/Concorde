@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
 
-<<<<<<< HEAD
 <!-- sim initialization.  -->
-=======
-<!-- Sim initialization.
--->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 <PropertyList include="Concorde-views.xml">
 
@@ -26,22 +21,10 @@
    <setting>1.0</setting>
   </flaps>
 
-<<<<<<< HEAD
   <gui>
    <dialogs>
     <Concorde></Concorde>             <!-- path creation for nasal -->
    </dialogs>
   </gui>
-=======
-<!-- near plane -->
-
-<!-- CVS only
-  <rendering>
-   <camera-group>
-    <znear type="double">0.1</znear>
-   </camera-group>
-  </rendering>
--->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 </PropertyList>

@@ -181,11 +181,7 @@ Virtualcrew.timestamp = func {
     }
 
     me.itself["root"].getChild("state").setValue(me.getlog());
-<<<<<<< HEAD
     me.itself["root"].getChild("time").setValue(me.noinstrument["time"].getValue());
-=======
-    me.itself["root"].getChild("time").setValue(getprop("/sim/time/gmt-string"));
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 # other crew member tells, that he has completed
@@ -989,10 +985,7 @@ RadioManagement.new = func {
 
                DESCENTFPM : -100,
 
-<<<<<<< HEAD
                state : "",
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                target : "",
                tower : "",
 
@@ -1010,7 +1003,6 @@ RadioManagement.init = func {
 }
 
 RadioManagement.set_relation = func( autopilot ) {
-<<<<<<< HEAD
    me.autopilotsystem = autopilot;
 }
 
@@ -1036,9 +1028,6 @@ RadioManagement.radioexport = func( arrival ) {
    else {
        me.itself["root"].getChild("airport-phase").setValue( "not found" );
    }
-=======
-    me.autopilotsystem = autopilot;
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 RadioManagement.copilot = func( task ) {
@@ -1049,11 +1038,7 @@ RadioManagement.copilot = func( task ) {
 
            # VOR 1
            if( task.can() ) {
-<<<<<<< HEAD
                me.set_vor( 1, task, nil );
-=======
-               me.set_vor( 1, task );
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            }
 
            if( task.can() ) {
@@ -1071,11 +1056,7 @@ RadioManagement.captain = func( task ) {
 
            # VOR 0
            if( task.can() ) {
-<<<<<<< HEAD
                me.set_vor( 0, task, nil );
-=======
-               me.set_vor( 0, task );
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            }
 
            if( task.can() ) {
@@ -1093,20 +1074,12 @@ RadioManagement.engineer = func( task ) {
 
            # ADF 1
            if( task.can() ) {
-<<<<<<< HEAD
                me.set_adf( 0, task, nil );
-=======
-               me.set_adf( 0, task );
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            }
 
            # ADF 2
            if( task.can() ) {
-<<<<<<< HEAD
                me.set_adf( 1, task, nil );
-=======
-               me.set_adf( 1, task );
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            }
 
            if( task.can() ) {
@@ -1116,13 +1089,8 @@ RadioManagement.engineer = func( task ) {
    }
 }
 
-<<<<<<< HEAD
 RadioManagement.set_vor = func( index, task, phase ) {
     phase = me.get_phase( phase );
-=======
-RadioManagement.set_vor = func( index, task ) {
-    var phase = me.get_phase();
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     if( phase != nil ) {
         var vor = phase.getChildren("vor");
@@ -1156,13 +1124,9 @@ RadioManagement.set_vor = func( index, task ) {
                 if( currentmhz != frequencymhz ) {
                     me.dependency["vor"][radio].getNode("frequencies/selected-mhz").setValue(frequencymhz);
                     change = constant.TRUE;
-<<<<<<< HEAD
                     if( task != nil ) {
                         task.toggleclick("vor " ~ index);
                     }
-=======
-                    task.toggleclick("vor " ~ index);
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                 }
             }
 
@@ -1173,13 +1137,8 @@ RadioManagement.set_vor = func( index, task ) {
     }
 }
 
-<<<<<<< HEAD
 RadioManagement.set_adf = func( index, task, phase ) {
     phase = me.get_phase( phase );
-=======
-RadioManagement.set_adf = func( index, task ) {
-    var phase = me.get_phase();
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
     if( phase != nil ) {
         var adf = phase.getChildren("adf");
@@ -1207,20 +1166,15 @@ RadioManagement.set_adf = func( index, task ) {
 
                 if( currentkhz != frequencykhz ) {
                     me.dependency["adf"][index].getNode("frequencies/selected-khz").setValue(frequencykhz);
-<<<<<<< HEAD
                     if( task != nil ) {
                         task.toggleclick("adf " ~ index);
                     }
-=======
-                    task.toggleclick("adf " ~ index);
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
                 }
             }
         }
     }
 }
 
-<<<<<<< HEAD
 RadioManagement.select_phase = func( arrival ) {
    var opposite = "";
    var phase = nil;
@@ -1274,35 +1228,12 @@ RadioManagement.is_change = func {
 }
 
 RadioManagement.nearest_airport = func( bycrew, byuser, userairport ) {
-=======
-RadioManagement.get_phase = func {
-    var phase = nil;
-
-    if( me.entry > me.NOENTRY ) {
-        if( me.noinstrument["speed"].getValue() < me.DESCENTFPM * constant.MINUTETOSECOND ) {
-            phase = me.itself["airport"][ me.entry ].getNode("arrival");
-        }
-
-        else {
-            phase = me.itself["airport"][ me.entry ].getNode("departure");
-        }
-    }
-
-    return phase;
-}
-
-RadioManagement.is_change = func {
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var result = constant.FALSE;
    var index = me.NOENTRY;
    var distancemeter = 0.0;
    var nearestmeter = me.EARTHKM * constant.KMTOMETER;
    var airport = "";
-<<<<<<< HEAD
    var child = "";
-=======
-   var info = nil;
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    var flight = geo.aircraft_position();
    var destination = geo.Coord.new();
 
@@ -1310,7 +1241,6 @@ RadioManagement.is_change = func {
    # nearest airport
    me.target = "";
    for(var i=0; i<size(me.itself["airport"]); i=i+1) {
-<<<<<<< HEAD
        child = me.itself["airport"][ i ].getChild("airport-id");
        # <airport/>
        if ( child != nil ) {
@@ -1340,33 +1270,14 @@ RadioManagement.is_change = func {
                     }
                 }
             }
-=======
-       airport = me.itself["airport"][ i ].getChild("airport-id").getValue();
-       info = airportinfo( airport );
-
-       if( info != nil ) {
-           destination.set_latlon( info.lat, info.lon );
-           distancemeter = flight.distance_to( destination ); 
-           if( distancemeter < nearestmeter ) {
-               me.target = airport;
-               nearestmeter = distancemeter;
-               index = i;
-           }
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        }
    }
 
 
-<<<<<<< HEAD
    # only within radio range, or user is overriding
    if( nearestmeter < me.RANGENM * constant.NMTOMETER ) {
        # detect change, or user is overriding
        if( me.tower != me.target or !bycrew or byuser ) {
-=======
-   # only within radio range
-   if( nearestmeter < me.RANGENM * constant.NMTOMETER ) {
-       if( me.tower != me.target ) {
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
            me.entry = index;
 
            me.itself["root"].getChild("airport-id").setValue( me.target );

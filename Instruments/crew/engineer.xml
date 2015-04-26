@@ -105,11 +105,8 @@
   <type>pick</type>
   <object-name>AllPilot</object-name>
   <action>
-<<<<<<< HEAD
    <button>0</button>
    <repeatable>false</repeatable>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <binding>
     <command>nasal</command>
     <script>globals.Concorde.crewscreen.minimizeexport();</script>

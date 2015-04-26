@@ -13,11 +13,7 @@
   <inlet-main>/controls/fuel/tank[4]/inlet-main[0]</inlet-main>
   <inlet-auto>/controls/fuel/tank[4]/inlet-auto[0]</inlet-auto>
   <inlet-static>/controls/fuel/tank[4]/inlet-static[0]</inlet-static>
-<<<<<<< HEAD
   <name>/consumables/fuel/tank[4]/name</name>
-=======
-  <tank-num>/consumables/fuel/tank[4]/tank-num</tank-num>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
  </params>
 
 
@@ -74,11 +70,7 @@
     <transformation>
      <condition>
       <equals>
-<<<<<<< HEAD
        <property alias="../../../../../../../params/name"/>
-=======
-       <property alias="../../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        <value>5</value>
       </equals>
      </condition>
@@ -88,11 +80,7 @@
     <transformation>
      <condition>
       <equals>
-<<<<<<< HEAD
        <property alias="../../../../../../../params/name"/>
-=======
-       <property alias="../../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        <value>7</value>
       </equals>
      </condition>
@@ -156,11 +144,7 @@
     <transformation>
      <condition>
       <equals>
-<<<<<<< HEAD
        <property alias="../../../../../../../params/name"/>
-=======
-       <property alias="../../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        <value>5</value>
       </equals>
      </condition>
@@ -170,11 +154,7 @@
     <transformation>
      <condition>
       <equals>
-<<<<<<< HEAD
        <property alias="../../../../../../../params/name"/>
-=======
-       <property alias="../../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        <value>7</value>
       </equals>
      </condition>
@@ -207,11 +187,7 @@
     <transformation>
      <condition>
       <equals>
-<<<<<<< HEAD
        <property alias="../../../../../../../params/name"/>
-=======
-       <property alias="../../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        <value>5</value>
       </equals>
      </condition>
@@ -221,11 +197,7 @@
     <transformation>
      <condition>
       <equals>
-<<<<<<< HEAD
        <property alias="../../../../../../../params/name"/>
-=======
-       <property alias="../../../../../../../params/tank-num"/>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
        <value>7</value>
       </equals>
      </condition>

@@ -71,10 +71,7 @@ Pressurization.new = func {
 
 Pressurization.init = func {
     me.inherit_system("/systems/pressurization");
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     me.LEAKINHG = me.LEAKINHGPM / ( constant.MINUTETOSECOND / me.PRESSURIZESEC );
     me.DEPRESSURIZEINHG = me.DEPRESSURIZEINHGPM / ( constant.MINUTETOSECOND / me.PRESSURIZESEC );
 
@@ -813,10 +810,6 @@ Airconditioning.new = func {
 
 Airconditioning.init = func {
     me.inherit_system("/systems/temperature");
-<<<<<<< HEAD
-=======
-    Airconditioning.enginetempoverride = 0;
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 Airconditioning.set_rate = func( rates ) {
@@ -1028,7 +1021,6 @@ Airconditioning.schedule = func {
         # one supposes quick cooling by RAM air, when no mass flow.
         me.apply(me.itself["group"][i].getChild("inlet-degc").getPath(),inletdegc);
         me.apply(me.itself["group"][i].getChild("duct-degc").getPath(),ductdegc);
-<<<<<<< HEAD
 
         if( me.dependency["tank"][i].getChild("empty").getValue() ) {
             # outside air temperature, once empty
@@ -1043,24 +1035,6 @@ Airconditioning.schedule = func {
             if( me.dependency["airbleed"][i].getChild("fuel-valve").getValue() ) {
                 fueldegc = fueldegc + ( inletdegc - tankdegc ) * me.FUELHEATING;
             }
-=======
-        
-        # Added an override, for some reason when the tank runs out of fuel it goes NaN. This makes it only show the error once
-        # air bleed transfers heat to fuel
-        if ( ! me.enginetempoverride ) {
-            tankdegc = me.dependency["tank"][i].getChild("temperature_degC").getValue();
-            if ( tankdegc == nil ) {
-                me.enginetempoverride = 1;
-                tankdegc = 15;
-            }
-        } else {
-            tankdegc = 15;
-        }
-        fueldegc = tankdegc;
-
-        if( me.dependency["airbleed"][i].getChild("fuel-valve").getValue() ) {
-            fueldegc = fueldegc + ( inletdegc - tankdegc ) * me.FUELHEATING;
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
         }
         me.apply(me.dependency["engine"][i].getChild("fuel-degc").getPath(),fueldegc);
    }
@@ -1232,10 +1206,6 @@ TankTemperature.new = func {
 
 TankTemperature.init = func {
    me.inherit_system("/instrumentation/tank-temperature");
-<<<<<<< HEAD
-=======
-   
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }
 
 TankTemperature.set_rate = func( rates ) {
@@ -1249,7 +1219,6 @@ TankTemperature.selectorexport = func {
 }
 
 TankTemperature.schedule = func {
-<<<<<<< HEAD
    var tankdegc = 0.0;
 
    # once empty, outside air temperature
@@ -1267,12 +1236,4 @@ TankTemperature.schedule = func {
    interpolate( me.itself["root"].getChild("engine-degc").getPath(),
                 me.dependency["engine"][me.selector].getChild("fuel-degc").getValue(),
                 me.AIRSEC );
-=======
-   if ( ! Airconditioning.enginetempoverride ) {
-     interpolate( me.itself["root"].getChild("tank-degc").getPath(), me.dependency["tank"][me.selector].getChild("temperature_degC").getValue(), me.AIRSEC );
-   } else {
-     interpolate( me.itself["root"].getChild("tank-degc").getPath(), 15, me.AIRSEC );
-   }
-   interpolate( me.itself["root"].getChild("engine-degc").getPath(), me.dependency["engine"][me.selector].getChild("fuel-degc").getValue(), me.AIRSEC );
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 }

@@ -16,11 +16,7 @@
  <!-- ======================================= -->
 
  <!-- AUTOPILOT -->
-<<<<<<< HEAD
 
-=======
- <!--
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   <panel>
    <path>Aircraft/Concorde/Panels/Concorde-autopilot.xml</path>
    <bottom-left>
@@ -39,10 +35,6 @@
     <z-m> 1.382</z-m>
    </top-left>
   </panel>
-<<<<<<< HEAD
-=======
-  -->
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
   <panel>
    <path>Aircraft/Concorde/Panels/Concorde-autopilot-right.xml</path>
@@ -83,31 +75,7 @@
     <z-m> 1.593</z-m>
    </top-left>
   </panel>
-<<<<<<< HEAD
 
-=======
-<!--
- <panel>
-   <path>Aircraft/Concorde/Models/Cockpit/Concorde-3d-cockpit.xml</path>
-   <bottom-left>
-    <x-m>-23.790</x-m>
-    <y-m>-0.631</y-m>
-    <z-m> 0.988</z-m>
-   </bottom-left>
-   <bottom-right>
-    <x-m>-23.790</x-m>
-    <y-m> 0.579</y-m>
-    <z-m> 0.988</z-m>
-   </bottom-right>
-   <top-left>
-    <x-m>-23.895</x-m>
-    <y-m>-0.631</y-m>
-    <z-m> 1.593</z-m>
-   </top-left>
-  </panel>
--->
-  
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
  <!-- OVERHEAD -->
 
   <panel>
@@ -576,30 +544,6 @@
    </top-left>
   </panel>
 
-<<<<<<< HEAD
-=======
-<!-- STEWARD -->
-
-  <panel>
-   <path>Aircraft/Concorde/Panels/Concorde-steward.xml</path>
-   <bottom-left>
-    <x-m>-17.63</x-m>
-    <y-m>-0.51</y-m>
-    <z-m> 1.558</z-m>
-   </bottom-left>
-   <bottom-right>
-    <x-m>-17.63</x-m>
-    <y-m>-1.11</y-m>
-    <z-m> 1.558</z-m>
-   </bottom-right>
-   <top-left>
-    <x-m>-17.63</x-m>
-    <y-m>-0.51</y-m>
-    <z-m> 1.858</z-m>
-   </top-left>
-  </panel>
-
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 <!-- ============ -->
 <!-- Instruments  -->
@@ -682,7 +626,6 @@
   </model>
 
   <model>
-<<<<<<< HEAD
    <name>Audio</name>
    <path>Aircraft/Concorde/Instruments/pedestal/audio.xml</path>
    <offsets>
@@ -721,8 +664,6 @@
   </model>
 
   <model>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <name>Trim Cylinder</name>
    <path>Aircraft/Concorde/Instruments/pedestal/trim-cylinder.xml</path>
    <offsets>
@@ -753,7 +694,6 @@
   </model>
 
   <model>
-<<<<<<< HEAD
    <name>VHF 1</name>
    <path>Aircraft/Concorde/Instruments/pedestal/VHF.xml</path>
    <offsets>
@@ -784,17 +724,11 @@
   </model>
 
   <model>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
    <name>INS 3</name>
    <path>Aircraft/Concorde/Instruments/INS/INS.xml</path>
    <offsets>
     <x-m>-22.920</x-m>
-<<<<<<< HEAD
     <y-m> 0.077</y-m>
-=======
-    <y-m> 0.110</y-m>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
     <z-m> 0.820</z-m>
    </offsets>
    <overlay>
@@ -817,7 +751,6 @@
    </overlay>
   </model>
 
-<<<<<<< HEAD
   <model>
    <name>ADF</name>
    <path>Aircraft/Concorde/Instruments/pedestal/ADF.xml</path>
@@ -828,8 +761,6 @@
    </offsets>
   </model>
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 <!-- CONSOLES -->
 
 <!-- steering -->
@@ -958,7 +889,6 @@
    </offsets>
   </model>
 
-<<<<<<< HEAD
   <model>
    <name>Audio 3</name>
    <path>Aircraft/Concorde/Instruments/pedestal/audio.xml</path>
@@ -1071,8 +1001,6 @@
    </offsets>
   </model>
 
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
 
 <!-- ====== -->
 <!-- Humans  -->
@@ -1225,7 +1153,6 @@
    <object-name>INS 1</object-name>
    <object-name>INS 2</object-name>
    <object-name>INS 3</object-name>
-<<<<<<< HEAD
    <object-name>Audio</object-name>
    <object-name>Audio 2</object-name>
    <object-name>Trim Cylinder</object-name>
@@ -1240,11 +1167,6 @@
    <name>Pedestal lighting</name>
    <object-name>Trim Cylinder</object-name>
    <object-name>Brake Cylinder</object-name>
-=======
-   <object-name>Trim Cylinder</object-name>
-   <object-name>Throttle Cylinder</object-name>
-   <object-name>Brake Cylinder</object-name>
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   </animation>
 
   <animation>
@@ -1257,7 +1179,6 @@
   <animation>
    <name>Engineer location</name>
    <object-name>Cold Air Outlet</object-name>
-<<<<<<< HEAD
    <object-name>Audio 3</object-name>
   </animation>
 
@@ -1272,8 +1193,6 @@
    <object-name>Panel spotlight 2</object-name>
    <object-name>Forward roof lamp</object-name>
    <object-name>Rack roof lamp</object-name>
-=======
->>>>>>> 3e67f437a740a074d2a8cbc75be8689ad4011502
   </animation>
 
 </PropertyList>
